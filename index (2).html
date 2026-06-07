@@ -15,7 +15,6 @@
   --gold-light: #FFE599;
   --gold-dark: #e6a800;
   --blue-btn: #2563eb;
-  --blue-btn-hover: #1d4ed8;
   --white: #ffffff;
   --off-white: #f8f9ff;
   --light-bg: #EEF1FB;
@@ -35,28 +34,31 @@ body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--text-d
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,42,94,0.97);backdrop-filter:blur(12px);padding:0.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo img{height:44px;width:44px;border-radius:10px;object-fit:contain}
-.nav-logo-text{font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;color:#ffffff;letter-spacing:-0.3px}
+.nav-logo img{height:40px;width:40px;object-fit:contain}
+.nav-logo-text{font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;color:#fff;letter-spacing:-0.3px}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-bar-nav{display:flex;gap:5px}
+.lang-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:var(--radius-pill);padding:0.3rem 0.7rem;font-size:0.72rem;font-weight:700;cursor:pointer;color:rgba(255,255,255,0.8);font-family:'Poppins',sans-serif;transition:all 0.2s}
+.lang-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy-dark)}
+.lang-btn:hover:not(.active){background:rgba(255,255,255,0.2)}
 .nav-cta{background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-pill);padding:0.55rem 1.2rem;font-size:0.83rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s}
 .nav-cta:hover{background:var(--gold-light);transform:scale(1.04)}
 
 /* HERO */
 .hero{background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 60%,#2a3d8f 100%);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 3rem;position:relative;overflow:hidden}
 .hero-stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1.5px 1.5px at 15% 20%,rgba(255,255,255,0.7) 0%,transparent 100%),radial-gradient(1px 1px at 45% 10%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(2px 2px at 70% 30%,rgba(245,200,66,0.6) 0%,transparent 100%),radial-gradient(1px 1px at 85% 15%,rgba(255,255,255,0.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 30% 70%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(1px 1px at 90% 70%,rgba(245,200,66,0.4) 0%,transparent 100%),radial-gradient(1px 1px at 10% 85%,rgba(255,255,255,0.5) 0%,transparent 100%)}
-.hero-logo{width:120px;height:120px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;animation:float 3.5s ease-in-out infinite;overflow:hidden;mix-blend-mode:lighten}
+.hero-logo{width:200px;height:200px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;animation:float 3.5s ease-in-out infinite;overflow:hidden}
 .hero-logo img{width:100%;height:100%;object-fit:contain}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,200,66,0.15);border:1.5px solid rgba(245,200,66,0.4);color:var(--gold);border-radius:var(--radius-pill);padding:0.35rem 1rem;font-size:0.78rem;font-weight:700;margin-bottom:1rem;letter-spacing:0.04em}
 .hero h1{font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(2rem,7vw,3.2rem);color:white;line-height:1.15;margin-bottom:1rem}
 .hero h1 span{color:var(--gold)}
-.hero-sub{color:rgba(255,255,255,0.75);font-size:clamp(0.88rem,3vw,1rem);max-width:380px;margin:0 auto 2rem;line-height:1.6}
+.hero-sub{color:rgba(255,255,255,0.75);font-size:clamp(0.88rem,3vw,1rem);max-width:380px;margin:0 auto 2rem;line-height:1.6;text-align:center}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn-gold{background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-pill);padding:0.9rem 1.8rem;font-size:0.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;box-shadow:0 4px 20px rgba(245,200,66,0.4);transition:all 0.2s}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,200,66,0.5);background:var(--gold-light)}
-.btn-blue{background:var(--blue-btn);color:white;border:none;border-radius:var(--radius-pill);padding:0.9rem 1.8rem;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s}
-.btn-blue:hover{background:var(--blue-btn-hover);transform:translateY(-2px)}
-.btn-wa-hero{background:#25D366;color:white;border:none;border-radius:var(--radius-pill);padding:0.9rem 1.8rem;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(37,211,102,0.35)}
-.btn-wa-hero:hover{background:#1aad54;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.45)}
+.btn-gold{background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-pill);padding:0.9rem 1.8rem;font-size:0.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s}
+.btn-gold:hover{transform:translateY(-2px);background:var(--gold-light)}
+.btn-wa-hero{background:#25D366;color:white;border:none;border-radius:var(--radius-pill);padding:0.9rem 1.8rem;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s}
+.btn-wa-hero:hover{background:#1aad54;transform:translateY(-2px)}
 .flags-row{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
 .flag-chip{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-pill);padding:0.3rem 0.75rem;color:rgba(255,255,255,0.85);font-size:0.75rem;font-weight:600;display:flex;align-items:center;gap:5px}
 .flags-label{color:rgba(255,255,255,0.45);font-size:0.72rem;margin-right:4px}
@@ -71,44 +73,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,42,94,0.9
 section{padding:3.5rem 1.5rem}
 .section-tag{display:inline-block;background:rgba(245,200,66,0.15);color:var(--gold-dark);border-radius:var(--radius-pill);padding:0.3rem 0.9rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;margin-bottom:0.6rem}
 .section-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(1.5rem,5vw,2rem);color:var(--navy);margin-bottom:0.4rem}
-.section-sub{color:var(--text-mid);font-size:0.88rem;margin-bottom:2rem}
+.section-sub{color:var(--text-mid);font-size:0.88rem;margin-bottom:2rem;text-align:center}
 .text-center{text-align:center}
 
 /* PLAN SELECTOR */
 #plans{background:var(--off-white)}
 .selector-wrap{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;max-width:520px;margin:0 auto}
-
-/* mode tabs */
 .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
 .mode-tab{padding:0.65rem;border:2px solid #dde2f5;border-radius:var(--radius-sm);font-size:0.83rem;font-weight:700;font-family:'Poppins',sans-serif;color:var(--text-mid);background:var(--off-white);cursor:pointer;transition:all 0.2s;text-align:center}
 .mode-tab.active{border-color:var(--navy);background:var(--navy);color:white}
-
 .sel-label{font-size:0.7rem;font-weight:700;color:var(--text-light);letter-spacing:0.07em;margin-bottom:5px;text-transform:uppercase}
 .sel-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.sel-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
 .sel-full{margin-bottom:12px}
 select{width:100%;padding:11px 28px 11px 10px;font-size:0.85rem;border:1.5px solid #dde2f5;border-radius:var(--radius-sm);color:var(--navy);background:var(--off-white);font-family:'Poppins',sans-serif;font-weight:600;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%231a2a5e' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
 select:focus{outline:none;border-color:var(--navy)}
-
-.price-result{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:1.2rem;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.price-result{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:1.2rem;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;position:relative}
 .price-main{color:white}
+.price-orig{font-size:1rem;font-weight:700;color:rgba(255,100,100,0.85);text-decoration:line-through;text-decoration-color:rgba(255,80,80,1);text-decoration-thickness:2px;margin-bottom:2px;min-height:1.2rem}
 .price-amount{font-family:'Nunito',sans-serif;font-size:2.2rem;font-weight:900;color:var(--gold)}
 .price-period{font-size:0.78rem;color:rgba(255,255,255,0.7);margin-top:2px}
-.price-badge{background:rgba(245,200,66,0.2);color:var(--gold-light);border-radius:var(--radius-pill);padding:4px 10px;font-size:0.72rem;font-weight:700}
-
+.disc-badge{background:rgba(255,60,60,0.35);color:#ffbbbb;border:1px solid rgba(255,100,100,0.4);border-radius:var(--radius-pill);padding:6px 14px;font-size:0.95rem;font-weight:800}
+.tooltip-wrap{position:absolute;top:10px;right:10px}
+.tooltip-icon{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);font-size:0.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;font-family:'Poppins',sans-serif;line-height:1}
+.tooltip-icon:hover{background:rgba(255,255,255,0.28)}
+.tooltip-bubble{position:absolute;right:0;top:30px;background:#1a2a5e;border:1.5px solid rgba(255,213,79,0.4);border-radius:10px;padding:10px 13px;width:230px;font-size:0.76rem;color:rgba(255,255,255,0.88);line-height:1.55;z-index:10;display:none;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,0.35)}
+.tooltip-bubble::before{content:'';position:absolute;top:-7px;right:6px;width:12px;height:12px;background:#1a2a5e;border-left:1.5px solid rgba(255,213,79,0.4);border-top:1.5px solid rgba(255,213,79,0.4);transform:rotate(45deg)}
+.tb-label{color:var(--gold);font-weight:700;font-size:0.72rem;margin-bottom:5px;letter-spacing:0.04em;text-transform:uppercase}
+.tooltip-wrap:hover .tooltip-bubble{display:block}
 .unavail-box{background:#fff8e0;border:2px solid var(--gold);border-radius:var(--radius-sm);padding:1rem;text-align:center;display:none;margin-bottom:12px}
 .unavail-box p{font-size:0.85rem;color:var(--navy);font-weight:600;margin-bottom:8px}
 .suggest-btns{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .suggest-btn{background:var(--light-bg);color:var(--navy);border:1.5px solid #dde2f5;border-radius:var(--radius-pill);padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.15s}
 .suggest-btn:hover{background:var(--navy);color:white;border-color:var(--navy)}
-
 .plan-notes{display:flex;gap:7px;margin-bottom:8px;flex-wrap:wrap}
 .plan-note{background:var(--light-bg);color:var(--navy);border-radius:var(--radius-pill);padding:0.28rem 0.7rem;font-size:0.7rem;font-weight:600;display:flex;align-items:center;gap:4px}
-.plan-note-vpn{background:#fff0f0;color:#b91c1c;border:1.5px solid #fca5a5;border-radius:var(--radius-pill);padding:0.32rem 0.85rem;font-size:0.72rem;font-weight:700;display:inline-flex;align-items:center;gap:5px}
-
-.wa-btn{width:100%;padding:1rem;background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Poppins',sans-serif;box-shadow:0 4px 20px rgba(245,200,66,0.4);transition:all 0.2s;text-decoration:none}
+.plan-note-vpn{background:#fff0f0;color:#b91c1c;border:1.5px solid #fca5a5;border-radius:var(--radius-pill);padding:0.32rem 0.85rem;font-size:0.72rem;font-weight:700;display:inline-flex;align-items:center;gap:5px;margin-bottom:12px}
+.wa-btn{width:100%;padding:1rem;background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Poppins',sans-serif;transition:all 0.2s;text-decoration:none}
 .wa-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
-.wa-btn.disabled{background:#ccc;color:#888;pointer-events:none;box-shadow:none}
+.wa-btn.disabled{background:#ccc;color:#888;pointer-events:none}
 
 /* HOW IT WORKS */
 #how{background:white}
@@ -118,7 +120,7 @@ select:focus{outline:none;border-color:var(--navy)}
 .step-num{width:40px;height:40px;flex-shrink:0;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;box-shadow:0 4px 14px rgba(26,42,94,0.25)}
 .step-icon{font-size:1.5rem;margin-bottom:4px}
 .step-title{font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:3px}
-.step-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.5}
+.step-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.5;text-align:justify}
 
 /* WHY */
 #why{background:var(--navy);color:white}
@@ -129,7 +131,7 @@ select:focus{outline:none;border-color:var(--navy)}
 .why-card:hover{background:rgba(255,255,255,0.12)}
 .why-emoji{font-size:1.5rem;margin-bottom:6px}
 .why-title{font-weight:700;font-size:0.85rem;color:var(--gold);margin-bottom:4px}
-.why-desc{font-size:0.76rem;color:rgba(255,255,255,0.65);line-height:1.5}
+.why-desc{font-size:0.76rem;color:rgba(255,255,255,0.65);line-height:1.5;text-align:justify}
 .why-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:1.5rem;max-width:520px;margin-left:auto;margin-right:auto}
 .why-badge{background:rgba(245,200,66,0.15);border:1px solid rgba(245,200,66,0.3);color:var(--gold);border-radius:var(--radius-pill);padding:0.4rem 1rem;font-size:0.75rem;font-weight:700;display:flex;align-items:center;gap:5px}
 
@@ -142,7 +144,7 @@ select:focus{outline:none;border-color:var(--navy)}
 .review-name{font-weight:700;font-size:0.88rem;color:var(--navy)}
 .review-meta{font-size:0.73rem;color:var(--text-light)}
 .review-stars{color:var(--gold);font-size:0.85rem;margin-bottom:4px}
-.review-text{font-size:0.83rem;color:var(--text-mid);line-height:1.6}
+.review-text{font-size:0.83rem;color:var(--text-mid);line-height:1.6;text-align:justify}
 
 /* FAQ */
 #faq{background:white}
@@ -151,19 +153,18 @@ select:focus{outline:none;border-color:var(--navy)}
 .faq-q{padding:1rem 1.1rem;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:0.88rem;color:var(--navy);background:white;transition:background 0.15s}
 .faq-q:hover{background:var(--off-white)}
 .faq-toggle{font-size:1.1rem;transition:transform 0.25s;flex-shrink:0;margin-left:8px}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.2s;font-size:0.83rem;color:var(--text-mid);line-height:1.6;padding:0 1.1rem;background:var(--off-white)}
-.faq-item.open .faq-a{max-height:260px;padding:0.9rem 1.1rem}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.2s;font-size:0.83rem;color:var(--text-mid);line-height:1.6;padding:0 1.1rem;background:var(--off-white);text-align:justify}
+.faq-item.open .faq-a{max-height:300px;padding:0.9rem 1.1rem}
 .faq-item.open .faq-toggle{transform:rotate(45deg)}
 .dial-tip{display:inline-block;background:var(--light-bg);color:var(--navy);border-radius:var(--radius-sm);padding:0.4rem 0.8rem;font-size:0.8rem;font-weight:700;margin-top:8px;font-family:monospace}
 
 /* FINAL CTA */
 #cta-final{background:linear-gradient(135deg,var(--navy) 0%,#2a3d8f 100%);padding:3.5rem 1.5rem;text-align:center}
 #cta-final h2{font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(1.5rem,5vw,2rem);color:white;margin-bottom:0.6rem}
-#cta-final h2 span{color:var(--gold)}
 #cta-final p{color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:2rem}
 .cta-btns{display:flex;flex-direction:column;gap:12px;align-items:center}
-.btn-wa-big{background:#25D366;color:#fff;border:none;border-radius:var(--radius-pill);padding:1.1rem 2.2rem;font-size:1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;text-decoration:none;box-shadow:0 6px 28px rgba(37,211,102,0.45);transition:all 0.2s;width:100%;max-width:320px;justify-content:center}
-.btn-wa-big:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(37,211,102,0.55);background:#1aad54}
+.btn-wa-big{background:#25D366;color:#fff;border:none;border-radius:var(--radius-pill);padding:1.1rem 2.2rem;font-size:1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s;width:100%;max-width:320px;justify-content:center}
+.btn-wa-big:hover{transform:translateY(-2px);background:#1aad54}
 .cta-trust{color:rgba(255,255,255,0.55);font-size:0.82rem;line-height:1.6;text-align:center}
 
 /* FOOTER */
@@ -181,132 +182,135 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="LUNARA_Logo.png" alt="Lunara" onerror="this.style.display='none'">
+    <img src="LUNARA Logo.png" alt="Lunara" onerror="this.style.display='none'">
     <span class="nav-logo-text">Lunara Travel eSIM</span>
   </div>
-  <a href="#plans" class="nav-cta">🛒 Buy Now</a>
+  <div class="nav-right">
+    <div class="lang-bar-nav">
+      <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn" onclick="setLang('bm',this)">BM</button>
+      <button class="lang-btn" onclick="setLang('zh',this)">中文</button>
+    </div>
+    <a href="#plans" class="nav-cta" id="nav-cta">🛒 Buy Now</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-stars"></div>
   <div class="hero-logo fade-in">
-    <img src="LUNARA_Logo.png" alt="Lunara eSIM" onerror="this.innerHTML='🌙'">
+    <img src="LUNARA Logo.png" alt="Lunara eSIM" onerror="this.parentElement.innerHTML='🌙'">
   </div>
-  <div class="hero-badge fade-in delay-1">✈️ Malaysia's Friendliest eSIM Store</div>
-  <h1 class="fade-in delay-2">Stay Connected<br><span>Anywhere You Go</span></h1>
-  <p class="hero-sub fade-in delay-3">No roaming fees. No physical SIM.<br>Scan, activate, and explore — ready in minutes.</p>
+  <div class="hero-badge fade-in delay-1" id="hero-badge">✈️ Malaysia's Friendliest eSIM Store</div>
+  <h1 class="fade-in delay-2" id="hero-h1">Stay Connected<br><span id="hero-title-span">Anywhere You Go</span></h1>
+  <p class="hero-sub fade-in delay-3" id="hero-sub">No roaming fees. No physical SIM.<br>Scan, activate, and explore — ready in minutes.</p>
   <div class="hero-btns fade-in delay-4">
-    <a href="#plans" class="btn-gold">🔍 Find My Plan</a>
-    <a href="https://wa.me/60163138539?text=Hi%20Lunara!%20I%27d%20like%20to%20know%20more%20about%20eSIM%20plans%20%F0%9F%93%B1" target="_blank" class="btn-wa-hero">💬 Chat with Us</a>
+    <a href="#plans" class="btn-gold" id="hero-btn-find">🔍 Find My Plan</a>
+    <a href="https://wa.me/60163138539?text=Hi%20Lunara!%20I%20would%20like%20to%20know%20more%20about%20your%20eSIM%20plans.%20Please%20assist%2C%20thank%20you!" target="_blank" class="btn-wa-hero" id="hero-btn-chat">💬 Chat with Us</a>
   </div>
   <div class="flags-row fade-in delay-5">
-    <span class="flags-label">Available for</span>
+    <span class="flags-label" id="hero-available">Available for</span>
     <span class="flag-chip">🇨🇳 China</span>
     <span class="flag-chip">🇯🇵 Japan</span>
     <span class="flag-chip">🇰🇷 Korea</span>
-    <span class="flag-chip">+ More soon</span>
+    <span class="flag-chip" id="hero-more">+ More soon</span>
   </div>
 </section>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-scroll">
-    <div class="trust-item">⚡ Ready in 10 Minutes</div>
-    <div class="trust-item">📲 QR Code Setup</div>
-    <div class="trust-item">💬 BM / English / 中文 Support</div>
-    <div class="trust-item">🌐 No Physical SIM</div>
-    <div class="trust-item">🎥 Video Tutorial Included</div>
-    <div class="trust-item">🇲🇾 Local Malaysian Support</div>
-    <div class="trust-item">💸 No Roaming Charges</div>
-    <div class="trust-item">✅ Trusted by Malaysians</div>
-    <div class="trust-item">⚡ Ready in 10 Minutes</div>
-    <div class="trust-item">📲 QR Code Setup</div>
-    <div class="trust-item">💬 BM / English / 中文 Support</div>
-    <div class="trust-item">🌐 No Physical SIM</div>
-    <div class="trust-item">🎥 Video Tutorial Included</div>
-    <div class="trust-item">🇲🇾 Local Malaysian Support</div>
-    <div class="trust-item">💸 No Roaming Charges</div>
-    <div class="trust-item">✅ Trusted by Malaysians</div>
+  <div class="trust-scroll" id="trust-scroll">
+    <div class="trust-item" data-key="trust1">⚡ Ready in 10 Minutes</div>
+    <div class="trust-item" data-key="trust2">📲 QR Code Setup</div>
+    <div class="trust-item" data-key="trust3">💬 BM / English / 中文 Support</div>
+    <div class="trust-item" data-key="trust4">🌐 No Physical SIM</div>
+    <div class="trust-item" data-key="trust5">📋 Setup Guide Provided</div>
+    <div class="trust-item" data-key="trust6">🇲🇾 Local Malaysian Support</div>
+    <div class="trust-item" data-key="trust7">💸 No Roaming Charges</div>
+    <div class="trust-item" data-key="trust8">✅ Trusted by Malaysians</div>
+    <div class="trust-item" data-key="trust1">⚡ Ready in 10 Minutes</div>
+    <div class="trust-item" data-key="trust2">📲 QR Code Setup</div>
+    <div class="trust-item" data-key="trust3">💬 BM / English / 中文 Support</div>
+    <div class="trust-item" data-key="trust4">🌐 No Physical SIM</div>
+    <div class="trust-item" data-key="trust5">📋 Setup Guide Provided</div>
+    <div class="trust-item" data-key="trust6">🇲🇾 Local Malaysian Support</div>
+    <div class="trust-item" data-key="trust7">💸 No Roaming Charges</div>
+    <div class="trust-item" data-key="trust8">✅ Trusted by Malaysians</div>
   </div>
 </div>
 
 <!-- PLAN SELECTOR -->
 <section id="plans">
   <div class="text-center">
-    <div class="section-tag">🔍 FIND YOUR PLAN</div>
-    <h2 class="section-title">Pick. Choose. Travel.</h2>
-    <p class="section-sub">Select your destination, data type & duration — price updates instantly!</p>
+    <div class="section-tag" id="plans-tag">🔍 FIND YOUR PLAN</div>
+    <h2 class="section-title" id="plans-title">Pick. Choose. Travel.</h2>
+    <p class="section-sub" id="plans-sub">Select your destination, data type &amp; duration — price updates instantly!</p>
   </div>
-
   <div class="selector-wrap">
-    <!-- Country -->
     <div class="sel-full">
-      <div class="sel-label">Country</div>
+      <div class="sel-label" id="lbl-country">Country</div>
       <select id="sel-country" onchange="onCountryChange()">
         <option value="cn">🇨🇳 China</option>
         <option value="jp">🇯🇵 Japan</option>
         <option value="kr">🇰🇷 South Korea</option>
       </select>
     </div>
-
-    <!-- Mode tabs -->
     <div class="mode-tabs">
-      <div class="mode-tab active" id="tab-unlimited" onclick="switchMode('unlimited')">🌐 Unlimited / Premium</div>
+      <div class="mode-tab active" id="tab-unlimited" onclick="switchMode('unlimited')">🌐 Unlimited Plans</div>
       <div class="mode-tab" id="tab-fixed" onclick="switchMode('fixed')">📦 Fixed GB Plans</div>
     </div>
-
-    <!-- UNLIMITED MODE -->
     <div id="mode-unlimited">
       <div class="sel-row-2">
         <div>
-          <div class="sel-label">Plan Type</div>
+          <div class="sel-label" id="lbl-plan">Plan Type</div>
           <select id="sel-uplan" onchange="onUplanChange()"></select>
         </div>
         <div>
-          <div class="sel-label">Days</div>
+          <div class="sel-label" id="lbl-days">Days</div>
           <select id="sel-udays" onchange="renderPrice()"></select>
         </div>
       </div>
     </div>
-
-    <!-- FIXED GB MODE -->
     <div id="mode-fixed" style="display:none">
       <div class="sel-row-2">
         <div>
-          <div class="sel-label">Data Amount</div>
+          <div class="sel-label" id="lbl-data">Data Amount</div>
           <select id="sel-gb" onchange="onGbChange()"></select>
         </div>
         <div>
-          <div class="sel-label">Days</div>
+          <div class="sel-label" id="lbl-days2">Days</div>
           <select id="sel-fdays" onchange="renderPrice()"></select>
         </div>
       </div>
     </div>
-
-    <!-- Price display -->
     <div class="price-result" id="price-box">
       <div class="price-main">
+        <div class="price-orig" id="price-orig"></div>
         <div class="price-amount" id="price-amt">RM —</div>
         <div class="price-period" id="price-label">Select options above</div>
       </div>
-      <div class="price-badge" id="price-badge">⚡ 10 min</div>
+      <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+        <div class="disc-badge" id="disc-badge" style="display:none">🎉 5% OFF</div>
+      </div>
+      <div class="tooltip-wrap" id="tooltip-wrap" style="display:none">
+        <div class="tooltip-icon">i</div>
+        <div class="tooltip-bubble">
+          <div class="tb-label" id="tt-label">Speed Info</div>
+          <div id="tooltip-text"></div>
+        </div>
+      </div>
     </div>
-
-    <!-- Unavailable box -->
     <div class="unavail-box" id="unavail-box">
-      <p>😅 This combination isn't available. Try one of these instead:</p>
+      <p id="unavail-msg">😅 This combination isn't available. Try one of these instead:</p>
       <div class="suggest-btns" id="suggest-btns"></div>
     </div>
-
-    <div class="plan-notes" id="plan-notes">
-      <div class="plan-note">📶 Tethering / Hotspot: Yes</div>
-      <div class="plan-note">⚡ Delivered in ~10 mins</div>
+    <div class="plan-notes">
+      <div class="plan-note" id="note-hotspot">📶 Tethering / Hotspot: Yes</div>
+      <div class="plan-note" id="note-delivery">⚡ Delivered in ~10 mins</div>
     </div>
-    <div class="plan-note-china" id="plan-note-china" style="display:none;margin-bottom:12px">
-      <div class="plan-note-vpn">🚫 No VPN Needed — works in China!</div>
+    <div id="plan-note-china" style="display:none">
+      <div class="plan-note-vpn" id="note-vpn">🚫 No VPN Needed — works in China!</div>
     </div>
-
     <a href="#" id="wa-link" class="wa-btn" target="_blank">
       💬 <span id="wa-text">Order on WhatsApp</span>
     </a>
@@ -316,33 +320,33 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
 <!-- HOW IT WORKS -->
 <section id="how">
   <div class="text-center">
-    <div class="section-tag">✨ HOW IT WORKS</div>
-    <h2 class="section-title">3 Easy Steps</h2>
-    <p class="section-sub">Seriously this simple. Even your mum can do it! 😄</p>
+    <div class="section-tag" id="how-tag">✨ HOW IT WORKS</div>
+    <h2 class="section-title" id="how-title">3 Easy Steps</h2>
+    <p class="section-sub" id="how-sub">Seriously this simple. Everyone can do it!</p>
   </div>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
       <div>
         <div class="step-icon">🛒</div>
-        <div class="step-title">Choose Your Plan</div>
-        <div class="step-desc">Pick your country, data & days. Tap the WhatsApp button to confirm your order with us directly.</div>
+        <div class="step-title" id="step1-title">Choose Your Plan</div>
+        <div class="step-desc" id="step1-desc">Pick your country, data &amp; days. Tap the WhatsApp button to confirm your order with us directly.</div>
       </div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <div>
         <div class="step-icon">📲</div>
-        <div class="step-title">Receive QR Code in ~10 Mins</div>
-        <div class="step-desc">After payment, we send your eSIM QR code + video tutorial on WhatsApp — fast and hassle-free.</div>
+        <div class="step-title" id="step2-title">Receive QR Code in ~10 Mins</div>
+        <div class="step-desc" id="step2-desc">After payment, we send your eSIM QR code + video tutorial on WhatsApp — fast and hassle-free.</div>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div>
         <div class="step-icon">✈️</div>
-        <div class="step-title">Scan & Travel!</div>
-        <div class="step-desc">Scan QR in Settings before you fly. Activate when you land — connected the moment you arrive!</div>
+        <div class="step-title" id="step3-title">Scan &amp; Travel!</div>
+        <div class="step-desc" id="step3-desc">Scan QR in Settings before you fly. Activate when you land — connected the moment you arrive!</div>
       </div>
     </div>
   </div>
@@ -351,87 +355,54 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
 <!-- WHY CHOOSE US -->
 <section id="why">
   <div class="text-center">
-    <div class="section-tag" style="background:rgba(245,200,66,0.2);color:var(--gold)">💛 WHY LUNARA?</div>
-    <h2 class="section-title">Because We Actually Care</h2>
-    <p class="section-sub">Built by Malaysians, for Malaysians. We get it.</p>
+    <div class="section-tag" style="background:rgba(245,200,66,0.2);color:var(--gold)" id="why-tag">💛 WHY LUNARA?</div>
+    <h2 class="section-title" id="why-title">Because We Actually Care</h2>
+    <p class="section-sub" id="why-sub">Built by Malaysians, for Malaysians. We get it.</p>
   </div>
   <div class="why-grid">
-    <div class="why-card">
-      <div class="why-emoji">⚡</div>
-      <div class="why-title">Delivery in ~10 Minutes</div>
-      <div class="why-desc">QR code sent to your WhatsApp fast after payment — no long waits</div>
-    </div>
-    <div class="why-card">
-      <div class="why-emoji">💰</div>
-      <div class="why-title">Affordable Prices</div>
-      <div class="why-desc">Much cheaper than roaming. Honest pricing, zero hidden fees</div>
-    </div>
-    <div class="why-card">
-      <div class="why-emoji">💬</div>
-      <div class="why-title">BM / English / 中文</div>
-      <div class="why-desc">Chat with a real human in your preferred language, anytime</div>
-    </div>
-    <div class="why-card">
-      <div class="why-emoji">🎥</div>
-      <div class="why-title">Setup Guide Included</div>
-      <div class="why-desc">We send both a video guide AND a slide/image step-by-step guide — no confusion, ever</div>
-    </div>
-    <div class="why-card">
-      <div class="why-emoji">🌍</div>
-      <div class="why-title">Connected on Landing</div>
-      <div class="why-desc">Pre-install before you fly, activate the moment you land</div>
-    </div>
-    <div class="why-card">
-      <div class="why-emoji">📱</div>
-      <div class="why-title">Beginner Friendly</div>
-      <div class="why-desc">First time using eSIM? No worries — we guide you every step</div>
-    </div>
+    <div class="why-card"><div class="why-emoji">⚡</div><div class="why-title" id="why1-title">Delivery in ~10 Minutes</div><div class="why-desc" id="why1-desc">QR code sent to your WhatsApp fast after payment — no long waits</div></div>
+    <div class="why-card"><div class="why-emoji">💰</div><div class="why-title" id="why2-title">Affordable Prices</div><div class="why-desc" id="why2-desc">Much cheaper than roaming. Honest pricing, zero hidden fees</div></div>
+    <div class="why-card"><div class="why-emoji">💬</div><div class="why-title" id="why3-title">BM / English / 中文</div><div class="why-desc" id="why3-desc">Chat with a real human in your preferred language, anytime</div></div>
+    <div class="why-card"><div class="why-emoji">🎥</div><div class="why-title" id="why4-title">Set Up Guide Included</div><div class="why-desc" id="why4-desc">We provide both video tutorials and step-by-step image guides for a smooth activation experience</div></div>
+    <div class="why-card"><div class="why-emoji">🌍</div><div class="why-title" id="why5-title">Connected on Landing</div><div class="why-desc" id="why5-desc">Pre-install before you fly, activate the moment you land</div></div>
+    <div class="why-card"><div class="why-emoji">📱</div><div class="why-title" id="why6-title">Beginner Friendly</div><div class="why-desc" id="why6-desc">First time using eSIM? No worries — we guide you every step</div></div>
   </div>
   <div class="why-badges">
-    <div class="why-badge">✅ Trusted by Malaysian Travellers</div>
-    <div class="why-badge">✅ Compatible with Most iPhones & Android</div>
-    <div class="why-badge">✅ No Physical SIM Needed</div>
-    <div class="why-badge">✅ Works The Moment You Land</div>
+    <div class="why-badge" id="badge1">✅ Trusted by Malaysian Travellers</div>
+    <div class="why-badge" id="badge2">✅ Compatible with Most iPhones &amp; Android</div>
+    <div class="why-badge" id="badge3">✅ No Physical SIM Needed</div>
+    <div class="why-badge" id="badge4">✅ Works The Moment You Land</div>
   </div>
 </section>
 
 <!-- REVIEWS -->
 <section id="reviews">
   <div class="text-center">
-    <div class="section-tag">⭐ REVIEWS</div>
-    <h2 class="section-title">Travellers Love Lunara</h2>
-    <p class="section-sub">Real feedback from our happy customers</p>
+    <div class="section-tag" id="rev-tag">⭐ REVIEWS</div>
+    <h2 class="section-title" id="rev-title">Travellers Love Lunara</h2>
+    <p class="section-sub" id="rev-sub">Real feedback from our happy customers ❤️</p>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
       <div class="review-header">
         <div class="review-avatar" style="background:#EEF1FB;color:#1a2a5e">AN</div>
-        <div>
-          <div class="review-name">Amirah N.</div>
-          <div class="review-meta">🇯🇵 Osaka, Japan · 7 Days Unlimited</div>
-        </div>
+        <div><div class="review-name">Amirah N.</div><div class="review-meta">🇯🇵 Osaka, Japan · 12 Days Unlimited Plus</div></div>
       </div>
       <div class="review-stars">★★★★★</div>
-      <div class="review-text">"Ordered through WhatsApp and got my QR code within 10 minutes! Setup was super easy with the video guide. Signal was great throughout Japan. Will buy again for Korea trip!"</div>
+      <div class="review-text">"Ordered through WhatsApp and got my QR code within 10 minutes! Setup was super easy with the video guide. Signal was great throughout Japan. Will buy again for my next trip!"</div>
     </div>
     <div class="review-card">
       <div class="review-header">
         <div class="review-avatar" style="background:#fff8e0;color:#c9a020">DH</div>
-        <div>
-          <div class="review-name">Danial H.</div>
-          <div class="review-meta">🇨🇳 Shanghai, China · 10 Days Unlimited</div>
-        </div>
+        <div><div class="review-name">Danial H.</div><div class="review-meta">🇨🇳 Shanghai, China · 7 Days 10GB</div></div>
       </div>
       <div class="review-stars">★★★★★</div>
-      <div class="review-text">"Best decision ever. Lunara China eSIM worked perfectly even in the subway. Way cheaper than Maxis roaming. The team replied super fast on WhatsApp. Highly recommended!"</div>
+      <div class="review-text">"China eSIM worked perfectly and no VPN needed. Way cheaper than Maxis roaming. The team replied super fast on WhatsApp. Highly recommended!"</div>
     </div>
     <div class="review-card">
       <div class="review-header">
         <div class="review-avatar" style="background:#e8faf0;color:#0F6E56">SF</div>
-        <div>
-          <div class="review-name">Syafiqah F.</div>
-          <div class="review-meta">🇰🇷 Seoul, Korea · 5 Days Unlimited</div>
-        </div>
+        <div><div class="review-name">Syafiqah F.</div><div class="review-meta">🇰🇷 Seoul, Korea · 10 Days Unlimited Premium</div></div>
       </div>
       <div class="review-stars">★★★★★</div>
       <div class="review-text">"First time pakai eSIM, nervous sikit. Tapi team Lunara guide step by step dalam BM sampai berjaya! Jimat duit jimat masa. Memang recommend untuk semua yang nak travel! 👍"</div>
@@ -442,51 +413,49 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
 <!-- FAQ -->
 <section id="faq">
   <div class="text-center">
-    <div class="section-tag">❓ FAQ</div>
-    <h2 class="section-title">Got Questions?</h2>
-    <p class="section-sub">Most common questions answered below!</p>
+    <div class="section-tag" id="faq-tag">❓ FAQ</div>
+    <h2 class="section-title" id="faq-title">Got Questions?</h2>
+    <p class="section-sub" id="faq-sub">Most common questions answered below!</p>
   </div>
   <div class="faq-list">
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">What is an eSIM? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">An eSIM (embedded SIM) is a digital SIM card built into your phone. Instead of a physical card, you scan a QR code and your phone connects to a data network — no swapping SIMs needed! Your existing Malaysian number stays active at the same time.</div>
+      <div class="faq-q"><span id="faq-q1">What is an eSIM?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a1">An eSIM (embedded SIM) is a digital SIM card built into your phone. Instead of a physical card, you scan a QR code and your phone connects to a data network — no swapping SIMs needed!</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Does my phone support eSIM? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Most phones from 2018 onwards support eSIM — including iPhone XS and newer, Samsung Galaxy S20+, Google Pixel 3+, and many more. Not sure? Dial this code on your phone to check:<br><span class="dial-tip">📞 Dial: #06#</span><br><br>If you see an "EID" number in the result, your phone supports eSIM! Still not sure? Just WhatsApp us your phone model and we'll check for you 😊</div>
+      <div class="faq-q"><span id="faq-q2">Does my phone support eSIM?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a2">Most phones from 2018 onwards support eSIM — including iPhone XS and newer, Samsung Galaxy S20+, Google Pixel 3+, and many more. Not sure? Dial #06# — if you see an EID number, your phone supports eSIM!</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">How do I activate my eSIM? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">After payment, we send you a QR code + video tutorial on WhatsApp. Go to Settings → Mobile Data → Add eSIM → Scan QR Code. Done! You can pre-install it before your trip and only activate it when you land — your data validity starts from activation, not installation.</div>
+      <div class="faq-q"><span id="faq-q3">How do I activate my eSIM?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a3">After payment, we send you a QR code + step-by-step guide on WhatsApp. Go to Settings → Mobile Data → Add eSIM → Scan QR Code. You can pre-install before your trip and activate when you land.</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Can I use hotspot / share data? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Yes! Most of our plans support mobile hotspot so you can share with travel companions. Great for families and groups travelling together!</div>
+      <div class="faq-q"><span id="faq-q4">Can I use hotspot / share data?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a4">Yes! Most of our plans support mobile hotspot so you can share with travel companions. Great for families and groups travelling together!</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">What if I run out of data? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Just WhatsApp us and we'll arrange a top-up plan quickly. For worry-free travel, we recommend the Unlimited plan — no tracking, no stress, just browse freely the whole trip!</div>
+      <div class="faq-q"><span id="faq-q5">What if I run out of data?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a5">Just WhatsApp us and we'll arrange a top-up plan quickly. For worry-free travel, we recommend the Unlimited plan — no tracking, no stress, just browse freely the whole trip!</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">How do I pay? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Payment is done via WhatsApp — we accept DuitNow QR, online banking, and TNG e-Wallet. Simple, fast, and secure. No need to enter any card details online.</div>
+      <div class="faq-q"><span id="faq-q6">How do I pay?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a6">Payment is done via WhatsApp — we accept DuitNow QR, online banking, and TNG e-Wallet. Simple, fast, and secure. No need to enter any card details online.</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">How long does it take to receive my eSIM? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">We aim to deliver your QR code within 10 minutes after payment confirmation during operating hours. We also send a video tutorial so setup is always easy, even for first-timers!</div>
+      <div class="faq-q"><span id="faq-q7">How long does it take to receive my eSIM?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a7">Most eSIMs are delivered within 10 minutes during operating hours (9AM–9PM). Late-night order? No worries — we'll process it within 12 hours once our team is back online.</div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section id="cta-final">
-  <h2>Ready to Travel <span>Stress-Free?</span></h2>
-  <p>Order your eSIM in 2 minutes. We'll handle the rest. 🌙✈️</p>
+  <h2 id="cta-title">Ready to Travel Stress-Free?</h2>
+  <p id="cta-sub">Order your eSIM in 2 minutes. We'll handle the rest. ✈️</p>
   <div class="cta-btns">
-    <a href="https://wa.me/60163138539?text=Hi%20Lunara!%20I%27d%20like%20to%20order%20an%20eSIM%20plan%20%F0%9F%93%B1" target="_blank" class="btn-wa-big">
-      💬 Order Now on WhatsApp
-    </a>
-    <div class="cta-trust">Not sure which plan to choose?<br>Contact us for personalised recommendations.</div>
+    <a href="https://wa.me/60163138539?text=Hi%20Lunara!%20I%20would%20like%20to%20know%20more%20about%20your%20eSIM%20plans.%20Please%20assist%2C%20thank%20you!" target="_blank" class="btn-wa-big" id="cta-btn">💬 Order Now on WhatsApp</a>
+    <div class="cta-trust" id="cta-trust">Not sure which plan to choose?<br>Contact us for personalised recommendations.</div>
   </div>
 </section>
 
@@ -494,207 +463,325 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
 <footer>
   <div class="footer-logo">🌙 LUNARA eSIM</div>
   <p>© 2025 Lunara eSIM · WhatsApp: 016-3138539</p>
-  <p style="margin-top:6px">Made with ❤️ for Malaysian travellers</p>
+  <p style="margin-top:6px" id="footer-made">Made with ❤️ for Malaysian travellers</p>
 </footer>
 
 <script>
-// ===== FULL PRICING DATA (from Excel, 2 decimal) =====
-const PRICING = {
-  cn: {
-    name:"China", flag:"🇨🇳",
-    unlimited:{
-      "Unlimited":       {"1":5.90,"2":6.90,"3":7.90,"4":10.90,"5":12.90,"6":14.90,"7":16.90,"8":18.90,"9":20.90,"10":22.90,"12":26.90,"15":32.90,"20":44.90,"25":58.90,"30":68.90},
-      "Unlimited Plus":  {"1":7.90,"2":8.90,"3":12.90,"4":17.90,"5":19.90,"6":24.90,"7":26.90,"8":29.90,"9":33.90,"10":36.90,"12":45.90,"15":55.90,"20":76.90,"25":106.90,"30":116.90}
-    },
-    fixed:{
-      "1GB":  {"1":5.70,"2":5.75,"3":5.80,"4":6.65,"5":6.70,"6":6.75,"7":6.80},
-      "3GB":  {"1":9.70,"2":9.75,"3":9.80,"4":10.65,"5":10.70,"6":10.75,"7":10.80,"10":11.80,"15":11.80,"20":11.80,"30":11.80},
-      "5GB":  {"1":14.60,"2":14.70,"3":14.80,"4":16.50,"5":16.60,"6":16.70,"7":16.80,"10":18.00,"15":18.80,"30":19.80},
-      "10GB": {"1":23.60,"2":23.70,"3":23.80,"4":25.70,"5":25.80,"6":26.70,"7":26.80,"10":28.80,"15":30.80,"30":32.80},
-      "20GB": {"3":43.80,"5":44.80,"7":45.80,"10":49.80,"15":52.80,"20":54.80,"25":54.80,"30":54.80},
-      "30GB": {"3":72.80,"5":75.80,"7":78.80,"10":81.80,"15":84.80,"20":86.50,"25":87.00,"30":87.80},
-      "50GB": {"3":100.80,"5":103.80,"7":109.80,"10":112.80,"15":116.80,"30":120.80}
-    }
+const T = {
+  en: {
+    nav_buy:"🛒 Buy Now",hero_badge:"✈️ Malaysia's Friendliest eSIM Store",hero_title:"Stay Connected",hero_span:"Anywhere You Go",
+    hero_sub:"No roaming fees. No physical SIM.<br>Scan, activate, and explore — ready in minutes.",
+    hero_btn_find:"🔍 Find My Plan",hero_btn_chat:"💬 Chat with Us",hero_available:"Available for",hero_more:"+ More soon",
+    plans_tag:"🔍 FIND YOUR PLAN",plans_title:"Pick. Choose. Travel.",plans_sub:"Select your destination, data type & duration — price updates instantly!",
+    lbl_country:"Country",lbl_plan:"Plan Type",lbl_days:"Days",lbl_data:"Data Amount",
+    tab_unlimited:"🌐 Unlimited Plans",tab_fixed:"📦 Fixed GB Plans",
+    price_select:"Select options above",unavail_msg:"😅 This combination isn't available. Try one of these instead:",
+    note_hotspot:"📶 Tethering / Hotspot: Yes",note_delivery:"⚡ Delivered in ~10 mins",note_vpn:"🚫 No VPN Needed — works in China!",
+    btn_order:"Order on WhatsApp",tt_label:"Speed Info",speed_reset:"Data limit resets every 24 hours from first use.",disc:"🎉 5% OFF",
+    day:"Day",days:"Days",
+    how_tag:"✨ HOW IT WORKS",how_title:"3 Easy Steps",how_sub:"Seriously this simple. Everyone can do it!",
+    step1_title:"Choose Your Plan",step1_desc:"Pick your country, data & days. Tap the WhatsApp button to confirm your order with us directly.",
+    step2_title:"Receive QR Code in ~10 Mins",step2_desc:"After payment, we send your eSIM QR code + video tutorial on WhatsApp — fast and hassle-free.",
+    step3_title:"Scan & Travel!",step3_desc:"Scan QR in Settings before you fly. Activate when you land — connected the moment you arrive!",
+    why_tag:"💛 WHY LUNARA?",why_title:"Because We Actually Care",why_sub:"Built by Malaysians, for Malaysians. We get it.",
+    why1_title:"Delivery in ~10 Minutes",why1_desc:"QR code sent to your WhatsApp fast after payment — no long waits",
+    why2_title:"Affordable Prices",why2_desc:"Much cheaper than roaming. Honest pricing, zero hidden fees",
+    why3_title:"BM / English / 中文",why3_desc:"Chat with a real human in your preferred language, anytime",
+    why4_title:"Set Up Guide Included",why4_desc:"We provide both video tutorials and step-by-step image guides for a smooth activation experience",
+    why5_title:"Connected on Landing",why5_desc:"Pre-install before you fly, activate the moment you land",
+    why6_title:"Beginner Friendly",why6_desc:"First time using eSIM? No worries — we guide you every step",
+    badge1:"✅ Trusted by Malaysian Travellers",badge2:"✅ Compatible with Most iPhones & Android",badge3:"✅ No Physical SIM Needed",badge4:"✅ Works The Moment You Land",
+    rev_tag:"⭐ REVIEWS",rev_title:"Travellers Love Lunara",rev_sub:"Real feedback from our happy customers ❤️",
+    faq_tag:"❓ FAQ",faq_title:"Got Questions?",faq_sub:"Most common questions answered below!",
+    faq_q1:"What is an eSIM?",faq_a1:"An eSIM (embedded SIM) is a digital SIM card built into your phone. Instead of a physical card, you scan a QR code and your phone connects to a data network — no swapping SIMs needed!",
+    faq_q2:"Does my phone support eSIM?",faq_a2:"Most phones from 2018 onwards support eSIM — including iPhone XS and newer, Samsung Galaxy S20+, Google Pixel 3+, and many more. Not sure? Dial #06# — if you see an EID number, your phone supports eSIM!",
+    faq_q3:"How do I activate my eSIM?",faq_a3:"After payment, we send you a QR code + step-by-step guide on WhatsApp. Go to Settings → Mobile Data → Add eSIM → Scan QR Code. You can pre-install before your trip and activate when you land.",
+    faq_q4:"Can I use hotspot / share data?",faq_a4:"Yes! Most of our plans support mobile hotspot so you can share with travel companions. Great for families and groups travelling together!",
+    faq_q5:"What if I run out of data?",faq_a5:"Just WhatsApp us and we'll arrange a top-up plan quickly. For worry-free travel, we recommend the Unlimited plan — no tracking, no stress, just browse freely the whole trip!",
+    faq_q6:"How do I pay?",faq_a6:"Payment is done via WhatsApp — we accept DuitNow QR, online banking, and TNG e-Wallet. Simple, fast, and secure. No need to enter any card details online.",
+    faq_q7:"How long does it take to receive my eSIM?",faq_a7:"Most eSIMs are delivered within 10 minutes during operating hours (9AM–9PM). Late-night order? No worries — we'll process it within 12 hours once our team is back online.",
+    cta_title:"Ready to Travel Stress-Free?",cta_sub:"Order your eSIM in 2 minutes. We'll handle the rest. ✈️",cta_btn:"💬 Order Now on WhatsApp",cta_trust:"Not sure which plan to choose?<br>Contact us for personalised recommendations.",
+    footer_made:"Made with ❤️ for Malaysian travellers",
+    trust1:"⚡ Ready in 10 Minutes",trust2:"📲 QR Code Setup",trust3:"💬 BM / English / 中文 Support",trust4:"🌐 No Physical SIM",trust5:"📋 Setup Guide Provided",trust6:"🇲🇾 Local Malaysian Support",trust7:"💸 No Roaming Charges",trust8:"✅ Trusted by Malaysians",
+    c_cn:"🇨🇳 China",c_jp:"🇯🇵 Japan",c_kr:"🇰🇷 South Korea",cn:"China",jp:"Japan",kr:"South Korea"
   },
-  jp: {
-    name:"Japan", flag:"🇯🇵",
-    unlimited:{
-      "Unlimited":          {"1":4.50,"2":8.05,"3":13.25,"4":15.15,"5":16.10,"6":18.00,"7":18.95,"8":21.50,"9":24.20,"10":26.05,"11":28.55,"12":31.15,"13":33.75,"14":36.35,"15":37.65,"16":40.10,"17":42.65,"18":45.15,"19":47.60,"20":50.15,"25":62.70,"30":75.20},
-      "Unlimited Plus":     {"1":6.25,"2":12.60,"3":18.05,"4":19.80,"5":24.65,"6":26.90,"7":31.35,"8":35.85,"9":40.30,"10":44.80,"11":49.25,"12":53.75,"13":58.20,"14":62.70,"15":67.15,"16":71.65,"17":76.10,"18":80.60,"19":85.05,"20":89.55,"25":111.90,"30":134.30},
-      "Unlimited Plus 5G":  {"1":6.80,"2":13.55,"3":16.55,"4":22.05,"5":26.50,"6":31.85,"7":37.15,"8":42.50,"9":47.75,"10":53.00,"11":58.25,"12":63.60,"13":68.90,"14":74.25,"15":79.50,"16":84.80,"17":90.15,"18":95.40,"19":100.70,"20":106.05,"25":132.55,"30":158.95}
-    },
-    fixed:{
-      "1GB":  {"3":5.40,"5":5.90,"7":6.25,"10":6.75,"15":7.20,"30":7.60},
-      "3GB":  {"3":10.80,"5":11.20,"7":11.65,"10":12.60,"15":12.95,"30":13.45},
-      "5GB":  {"3":11.90,"5":12.95,"7":14.80,"10":15.25,"15":17.00,"30":18.35},
-      "10GB": {"3":22.80,"5":25.05,"7":26.90,"10":29.10,"15":31.35,"30":32.75},
-      "20GB": {"3":46.15,"5":48.35,"7":50.60,"10":53.75,"15":57.30,"30":60.45},
-      "30GB": {"3":64.90,"5":69.40,"7":73.85,"10":78.35,"15":82.80,"30":87.30},
-      "50GB": {"3":98.50,"5":105.20,"7":111.90,"10":120.85,"15":125.35,"30":134.30}
-    }
+  bm: {
+    nav_buy:"🛒 Dapatkan eSIM Anda",hero_badge:"✈️ eSIM Mesra Pengembara Malaysia",hero_title:"Internet Mudah,",hero_span:"Di Mana Sahaja Anda Berada",
+    hero_sub:"Aktif dalam beberapa minit. Tiada roaming mahal.<br>Tiada pertukaran SIM. Terus bersambung sepanjang perjalanan.",
+    hero_btn_find:"🔍 Pilih Pelan Saya",hero_btn_chat:"💬 Chat Dengan Kami",hero_available:"🌍 Destinasi Popular",hero_more:"+ Banyak Lagi Akan Ditambah",
+    plans_tag:"🔍 CARI PELAN ANDA",plans_title:"Pilih. Tentukan. Kembara.",plans_sub:"Pilih destinasi, jenis data & tempoh — harga akan dikemas kini secara automatik!",
+    lbl_country:"Negara",lbl_plan:"Jenis Pelan",lbl_days:"Hari",lbl_data:"Jumlah Data",
+    tab_unlimited:"🌐 Tanpa Had",tab_fixed:"📦 Data Tetap",
+    price_select:"Pilih pilihan di atas",unavail_msg:"😅 Gabungan ini tidak tersedia. Cuba salah satu pilihan ini:",
+    note_hotspot:"📶 Hotspot / Tethering Disokong",note_delivery:"⚡ Dihantar dalam ~10 minit",note_vpn:"🚫 Tiada VPN diperlukan (berfungsi di China)",
+    btn_order:"Pesan terus melalui WhatsApp",tt_label:"Maklumat Data",speed_reset:"Kelajuan tinggi akan reset setiap 24 jam dari penggunaan pertama.",disc:"🎉 5% DISKAUN",
+    day:"Hari",days:"Hari",
+    how_tag:"✨ CARA IA BERFUNGSI",how_title:"3 Langkah Mudah",how_sub:"Mudah, Pantas & Tanpa Kerumitan. Sesiapa sahaja boleh menggunakannya.",
+    step1_title:"Pilih Pelan Anda",step1_desc:"Pilih destinasi, jumlah data dan tempoh perjalanan. Buat pesanan terus melalui WhatsApp.",
+    step2_title:"Terima Kod QR eSIM",step2_desc:"Selepas pembayaran, kami akan menghantar kod QR eSIM, panduan pemasangan dan video tutorial melalui WhatsApp dalam beberapa minit.",
+    step3_title:"Imbas & Terus Gunakan",step3_desc:"Imbas kod QR sebelum berlepas dan aktifkan apabila tiba. Terus berhubung sebaik sahaja mendarat.",
+    why_tag:"💛 MENGAPA LUNARA?",why_title:"Pilihan Pengembara Malaysia",why_sub:"Perjalanan lebih tenang apabila internet anda sentiasa tersedia.",
+    why1_title:"Penghantaran Pantas",why1_desc:"Kod QR eSIM dihantar melalui WhatsApp seawal 10 minit selepas pembayaran",
+    why2_title:"Harga Berpatutan",why2_desc:"Lebih murah berbanding roaming dengan harga yang telus dan tanpa caj tersembunyi",
+    why3_title:"Sokongan Dalam 3 Bahasa",why3_desc:"Bahasa Melayu, English atau 中文 — kami sedia membantu",
+    why4_title:"Panduan Lengkap",why4_desc:"Tutorial video dan panduan bergambar disediakan untuk memudahkan pemasangan",
+    why5_title:"Sedia Sebelum Berlepas",why5_desc:"Pasang sebelum perjalanan dan terus bersambung sebaik sahaja mendarat",
+    why6_title:"Mesra Pengguna Baharu",why6_desc:"Pertama kali menggunakan eSIM? Kami akan bantu anda langkah demi langkah",
+    badge1:"✅ Dipercayai Oleh Pengembara Malaysia",badge2:"✅ Serasi Dengan Kebanyakan iPhone & Android",badge3:"✅ Tidak Perlu SIM Fizikal",badge4:"✅ Terus Bersambung Sebaik Mendarat",
+    rev_tag:"⭐ ULASAN",rev_title:"Pengembara Suka Lunara",rev_sub:"Apa kata pelanggan kami yang gembira ❤️",
+    faq_tag:"❓ SOALAN LAZIM",faq_title:"Ada Soalan?",faq_sub:"Jangan risau — kami dah jawab soalan paling kerap ditanya!",
+    faq_q1:"eSIM itu sebenarnya apa?",faq_a1:"eSIM (embedded SIM) ialah SIM digital yang terbina dalam telefon anda. Tak perlu SIM fizikal — hanya scan QR code dan terus bersambung ke rangkaian data.",
+    faq_q2:"Telefon saya boleh guna eSIM ke?",faq_a2:"Kebanyakan telefon dari 2018 ke atas menyokong eSIM seperti iPhone XS ke atas, Samsung S20+, Google Pixel 3+ dan banyak lagi. Tak pasti? Dial #06# — jika ada nombor EID, telefon anda support eSIM!",
+    faq_q3:"Macam mana nak aktifkan eSIM?",faq_a3:"Selepas pembayaran, kami akan hantar QR code + panduan melalui WhatsApp. Pergi ke: Settings → Mobile Data → Add eSIM → Scan QR Code. Boleh install sebelum travel dan aktifkan bila tiba!",
+    faq_q4:"Boleh saya kongsi internet dengan keluarga & rakan?",faq_a4:"Ya! Kebanyakan plan menyokong hotspot — sesuai untuk keluarga & group travel!",
+    faq_q5:"Kalau data habis macam mana?",faq_a5:"WhatsApp kami saja — kami akan bantu top-up dengan cepat. Kami cadangkan plan Unlimited untuk travel tanpa stres!",
+    faq_q6:"Cara pembayaran macam mana?",faq_a6:"Bayaran melalui WhatsApp — Kami terima DuitNow QR, online banking & TNG eWallet. Tak perlu kad — mudah & selamat!",
+    faq_q7:"Berapa lama saya akan dapat eSIM saya?",faq_a7:"Biasanya dalam 10 minit (9AM–9PM). Order malam akan diproses dalam 12 jam.",
+    cta_title:"✈️ Sedia untuk Travel Tanpa Stres?",cta_sub:"2 minit untuk order eSIM anda. Biar kami uruskan yang lain ✈️",cta_btn:"✈️ Travel Tanpa Risau — Chat Sekarang",cta_trust:"Tak Pasti Nak Pilih Plan Mana?<br>Contact Kami Untuk Recommendation Yang Sesuai",
+    footer_made:"❤️ Dibuat Khas Untuk Rakyat Malaysia Yang Suka Travel",
+    trust1:"⚡ Siap Digunakan Dalam 10 Minit",trust2:"📲 Setup Guna QR Code",trust3:"💬 Support BM / English / 中文",trust4:"🌐 Tak Perlu SIM Fizikal",trust5:"📋 Guide Setup Disediakan",trust6:"🇲🇾 Support Tempatan Malaysia",trust7:"💸 Tiada Caj Roaming",trust8:"✅ Dipercayai Rakyat Malaysia",
+    c_cn:"🇨🇳 China",c_jp:"🇯🇵 Jepun",c_kr:"🇰🇷 Korea Selatan",cn:"China",jp:"Jepun",kr:"Korea Selatan"
   },
-  kr: {
-    name:"South Korea", flag:"🇰🇷",
-    unlimited:{
-      "Unlimited":         {"1":9.00,"3":9.50,"5":9.80,"7":12.80,"15":27.10,"20":43.50,"25":44.60,"30":53.55},
-      "Unlimited Plus":    {"5":19.35,"6":24.60,"7":25.65,"15":52.80,"20":77.90,"25":94.55,"30":99.30},
-      "Unlimited Premium": {"1":13.10,"5":96.65,"7":74.65,"8":85.35,"10":101.85,"15":152.75,"30":305.50}
-    },
-    fixed:{
-      "1GB":   {"3":3.45,"7":4.85},
-      "3GB":   {"5":8.50},
-      "5GB":   {"7":10.50},
-      "10GB":  {"7":19.20,"15":17.50,"30":20.50},
-      "20GB":  {"10":36.50,"15":37.50,"30":39.50},
-      "50GB":  {"15":53.20},
-      "100GB": {"10":85.85,"30":92.65}
-    }
+  zh: {
+    nav_buy:"🛒 立即购买",hero_badge:"✈️ 马来西亚值得信赖的 eSIM 商店",hero_title:"无论身在何处，",hero_span:"随时保持连接",
+    hero_sub:"无需漫游费，无需实体SIM卡。<br>扫码即可激活，几分钟内轻松上网。",
+    hero_btn_find:"🔍 查找适合我的配套",hero_btn_chat:"💬 联系客服",hero_available:"🌍 覆盖国家地区",hero_more:"更多国家即将上线",
+    plans_tag:"🔍 查找您的配套",plans_title:"选择 · 决定 · 出发",plans_sub:"选择目的地、配套类型与使用天数 — 价格将即时更新。",
+    lbl_country:"国家",lbl_plan:"配套类型",lbl_days:"天数",lbl_data:"流量",
+    tab_unlimited:"🌐 无限流量",tab_fixed:"📦 固定流量",
+    price_select:"请选择上方选项",unavail_msg:"😅 此组合暂不支持，请尝试以下选项：",
+    note_hotspot:"📶 支持热点共享",note_delivery:"⚡ 约10分钟内发送",note_vpn:"🚫 无需 VPN（中国可用）",
+    btn_order:"直接通过 WhatsApp 下单",tt_label:"流量说明",speed_reset:"高速流量每 24 小时重置一次（从首次使用开始计算）。",disc:"🎉 九五折优惠",
+    day:"天",days:"天",
+    how_tag:"✨ 使用方式",how_title:"3 个简单步骤",how_sub:"简单、快速、零烦恼。无需技术基础，人人都能轻松使用。",
+    step1_title:"选择适合的配套",step1_desc:"选择目的地、流量配套和使用天数，直接通过 WhatsApp 下单。",
+    step2_title:"接收 eSIM 二维码",step2_desc:"付款后，我们将在几分钟内通过 WhatsApp 发送 eSIM 二维码、安装指南和视频教程。",
+    step3_title:"扫码安装，落地即用",step3_desc:"出发前扫码安装，抵达后启用，落地即可上网。",
+    why_tag:"💛 为什么选择 Lunara？",why_title:"马来西亚旅客信赖的 eSIM 品牌",why_sub:"让旅行更轻松，让网络连接更简单。",
+    why1_title:"快速发送",why1_desc:"付款后最快 10 分钟内，通过 WhatsApp 收到 eSIM 二维码",
+    why2_title:"价格实惠透明",why2_desc:"比国际漫游更省钱，无隐藏费用",
+    why3_title:"支持三语客服",why3_desc:"支持 Bahasa Melayu、English 和中文沟通",
+    why4_title:"详细安装教程",why4_desc:"附带视频教程及图文指南，安装更轻松",
+    why5_title:"出发前即可安装",why5_desc:"提前设置，落地即可上网",
+    why6_title:"新手也能轻松使用",why6_desc:"第一次使用 eSIM？我们一步一步教你完成设置",
+    badge1:"✅ 马来西亚旅客信赖之选",badge2:"✅ 兼容大部分 iPhone 和 Android 手机",badge3:"✅ 无需实体 SIM 卡",badge4:"✅ 落地即联网",
+    rev_tag:"⭐ 用户真实反馈",rev_title:"旅行者都喜欢 Lunara",rev_sub:"来自开心用户的真实评价 ❤️",
+    faq_tag:"❓ 常见问题",faq_title:"有问题吗？",faq_sub:"我们帮你整理了最常见的问题！",
+    faq_q1:"eSIM 到底是什么？",faq_a1:"eSIM（嵌入式SIM卡）是内置在手机里的数字SIM卡。无需实体卡，只需扫描二维码即可连接网络。",
+    faq_q2:"我的手机能用 eSIM 吗？",faq_a2:"2018年及以上的手机大多支持 eSIM，例如 iPhone XS 及以上、Samsung S20+、Google Pixel 3+ 等。不确定？拨打 #06#，如果看到 EID编号，代表你的手机支持 eSIM！",
+    faq_q3:"怎么激活 eSIM？",faq_a3:"付款后，我们会通过 WhatsApp 发送二维码 + 安装指南。进入：设置 → 蜂窝网络 → 添加 eSIM → 扫描二维码。可在出发前安装，到达后再激活！",
+    faq_q4:"可以和家人朋友共享网络吗？",faq_a4:"可以！大部分套餐支持热点分享，非常适合家庭或多人旅行！",
+    faq_q5:"流量用完怎么办？",faq_a5:"直接 WhatsApp 我们即可，我们会帮你快速充值。推荐选择 Unlimited 套餐，旅行更无忧！",
+    faq_q6:"怎么付款？",faq_a6:"通过 WhatsApp 付款 — 支持 DuitNow QR、网上银行、Touch 'n Go eWallet。无需信用卡，更安全方便！",
+    faq_q7:"多久能收到我的eSIM呢？",faq_a7:"通常 10分钟内发送（9AM–9PM）。夜间订单将在 12小时内处理。",
+    cta_title:"✈️ 准备好无忧旅行了吗？",cta_sub:"2分钟完成下单，其余交给我们 ✈️",cta_btn:"✈️ 出国不断网，马上开通",cta_trust:"不确定该选哪个配套？<br>联系我们，我们会根据你的旅行需求推荐最适合的方案",
+    footer_made:"❤️ 献给热爱旅行的马来西亚人",
+    trust1:"⚡ 10分钟快速开通",trust2:"📲 QR Code 一扫即用",trust3:"💬 支持 BM / English / 中文",trust4:"🌐 无需实体 SIM 卡",trust5:"📋 附完整安装教学",trust6:"🇲🇾 马来西亚本地客服支持",trust7:"💸 无需支付漫游费",trust8:"✅ 深受马来西亚用户信赖",
+    c_cn:"🇨🇳 中国",c_jp:"🇯🇵 日本",c_kr:"🇰🇷 韩国",cn:"中国",jp:"日本",kr:"韩国"
   }
 };
 
-let currentMode = 'unlimited';
-let currentCountry = 'cn';
+const SPEED_DESC = {
+  cn:{
+    "Unlimited":{en:"1GB/day high-speed data, then unlimited at 384kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天1GB高速流量，超出后以384kbps无限使用。"},
+    "Unlimited Plus":{en:"2GB/day high-speed data, then unlimited at 384kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天2GB高速流量，超出后以384kbps无限使用。"}
+  },
+  jp:{
+    "Unlimited":{en:"1GB/day high-speed data, then unlimited at 256kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 256kbps.",zh:"每天1GB高速流量，超出后以256kbps无限使用。"},
+    "Unlimited Plus":{en:"2GB/day high-speed data, then unlimited at 256kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 256kbps.",zh:"每天2GB高速流量，超出后以256kbps无限使用。"},
+    "Unlimited Max":{en:"No speed limit — full 5G speed throughout your trip.",bm:"Tiada had kelajuan — 5G penuh sepanjang perjalanan.",zh:"无速度限制 — 全程5G高速上网。"}
+  },
+  kr:{
+    "Unlimited":{en:"1GB/day high-speed data, then unlimited at 384kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天1GB高速流量，超出后以384kbps无限使用。"},
+    "Unlimited Plus":{en:"2GB/day high-speed data, then unlimited at 384kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天2GB高速流量，超出后以384kbps无限使用。"},
+    "Unlimited Premium":{en:"5GB/day high-speed data, no speed limit.",bm:"5GB/hari data laju, tiada had kelajuan.",zh:"每天5GB高速流量，无速度限制。"}
+  }
+};
 
-function switchMode(mode) {
-  currentMode = mode;
-  document.getElementById('tab-unlimited').classList.toggle('active', mode==='unlimited');
-  document.getElementById('tab-fixed').classList.toggle('active', mode==='fixed');
-  document.getElementById('mode-unlimited').style.display = mode==='unlimited' ? '' : 'none';
-  document.getElementById('mode-fixed').style.display = mode==='fixed' ? '' : 'none';
-  if (mode==='unlimited') populateUplans(); else populateGb();
+const PRICING = {
+  cn:{
+    unlimited:{"Unlimited":{"1":5.90,"2":6.90,"3":7.90,"4":10.90,"5":12.90,"6":14.90,"7":16.90,"8":18.90,"9":20.90,"10":22.90,"12":26.90,"15":32.90,"20":44.90,"25":58.90,"30":68.90},"Unlimited Plus":{"1":7.90,"2":8.90,"3":12.90,"4":17.90,"5":19.90,"6":24.90,"7":26.90,"8":29.90,"9":33.90,"10":36.90,"12":45.90,"15":55.90,"20":76.90,"25":106.90,"30":116.90}},
+    fixed:{"1GB":{"1":3.25,"2":3.35,"3":3.45,"4":4.55,"5":4.65,"6":4.75,"7":4.85},"3GB":{"5":8.50},"5GB":{"7":10.50},"10GB":{"1":23.60,"2":23.70,"3":23.80,"4":25.70,"5":25.80,"6":26.70,"7":26.80,"10":28.80,"15":30.80,"30":32.80},"20GB":{"3":43.80,"5":44.80,"7":45.80,"10":49.80,"15":52.80,"20":54.80,"25":54.80,"30":54.80},"30GB":{"3":72.80,"5":75.80,"7":78.80,"10":81.80,"15":84.80,"20":86.50,"25":87.00,"30":87.80},"50GB":{"3":100.80,"5":103.80,"7":109.80,"10":112.80,"15":116.80,"30":120.80}}
+  },
+  jp:{
+    unlimited:{"Unlimited":{"1":8.50,"2":10.50,"3":12.50,"4":14.50,"5":16.50,"6":18.50,"7":20.50,"8":22.50,"9":24.50,"10":26.50,"11":28.50,"12":30.50,"13":32.50,"14":34.50,"15":36.50,"16":38.50,"17":40.50,"18":42.50,"19":44.50,"20":46.50,"25":56.50,"30":66.50},"Unlimited Plus":{"1":12.50,"2":14.50,"3":18.50,"4":20.50,"5":22.50,"6":24.50,"7":28.50,"8":30.50,"9":34.50,"10":38.50,"11":43.50,"12":47.50,"13":51.50,"14":55.50,"15":59.50,"16":63.50,"17":67.50,"18":71.50,"19":75.50,"20":79.50,"25":99.50,"30":119.50},"Unlimited Max":{"1":18.50,"2":20.50,"3":22.50,"4":24.50,"5":26.50,"6":28.50,"7":32.50,"8":36.50,"9":40.50,"10":44.50,"11":48.50,"12":52.50,"13":56.50,"14":60.50,"15":65.50,"16":70.50,"17":75.50,"18":80.50,"19":85.50,"20":90.50,"25":120.50,"30":150.50}},
+    fixed:{"1GB":{"3":4.90,"5":5.40,"7":5.90,"10":6.40,"15":6.90,"30":7.40},"3GB":{"3":9.40,"5":9.90,"7":10.40,"10":10.90,"15":11.40,"30":11.90},"5GB":{"3":10.90,"5":11.90,"7":12.90,"10":13.90,"15":14.90,"30":15.90},"10GB":{"3":21.90,"5":22.90,"7":23.90,"10":24.90,"15":25.90,"30":26.90},"20GB":{"3":35.90,"5":37.90,"7":39.90,"10":41.90,"15":43.90,"30":45.90},"30GB":{"3":60.90,"5":63.90,"7":66.90,"10":69.90,"15":72.90,"30":75.90},"50GB":{"3":82.90,"5":87.90,"7":92.90,"10":97.90,"15":102.90,"30":107.90}}
+  },
+  kr:{
+    unlimited:{"Unlimited":{"1":9.00,"2":9.25,"3":9.50,"4":9.55,"5":9.80,"6":12.55,"7":12.80,"8":27.05,"9":27.30,"10":27.55,"15":27.80,"20":34.80,"25":41.80,"30":48.80},"Unlimited Plus":{"1":18.80,"2":19.05,"3":19.30,"4":19.55,"5":19.80,"6":24.60,"7":25.65,"8":42.55,"9":42.80,"10":43.05,"15":46.80,"20":52.80,"25":72.80,"30":92.80},"Unlimited Premium":{"1":13.90,"7":68.90,"8":78.90,"10":99.90,"15":138.90,"30":268.90}},
+    fixed:{"1GB":{"1":3.25,"2":3.35,"3":3.45,"4":4.55,"5":4.65,"6":4.75,"7":4.85},"3GB":{"5":8.50},"5GB":{"7":10.50},"10GB":{"7":15.50,"15":17.50,"30":20.50},"20GB":{"10":36.50,"15":37.50,"30":39.50},"50GB":{"15":53.50},"100GB":{"10":72.50,"30":86.50}}
+  }
+};
+
+let currentMode='unlimited', currentCountry='cn', currentLang='en';
+
+function setLang(lang,btn){
+  currentLang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  applyLang();
 }
 
-function onCountryChange() {
-  currentCountry = document.getElementById('sel-country').value;
-  if (currentMode==='unlimited') populateUplans(); else populateGb();
+function applyLang(){
+  const t=T[currentLang];
+  const s=id=>document.getElementById(id);
+  s('nav-cta').textContent=t.nav_buy;
+  s('hero-badge').textContent=t.hero_badge;
+  s('hero-h1').innerHTML=t.hero_title+'<br><span id="hero-title-span">'+t.hero_span+'</span>';
+  s('hero-sub').innerHTML=t.hero_sub;
+  s('hero-btn-find').textContent=t.hero_btn_find;
+  s('hero-btn-chat').textContent=t.hero_btn_chat;
+  s('hero-available').textContent=t.hero_available;
+  s('hero-more').textContent=t.hero_more;
+  document.querySelectorAll('.trust-item').forEach(el=>{const k=el.getAttribute('data-key');if(k&&t[k])el.textContent=t[k];});
+  s('plans-tag').textContent=t.plans_tag;s('plans-title').textContent=t.plans_title;s('plans-sub').textContent=t.plans_sub;
+  s('lbl-country').textContent=t.lbl_country;s('lbl-plan').textContent=t.lbl_plan;s('lbl-days').textContent=t.lbl_days;s('lbl-data').textContent=t.lbl_data;s('lbl-days2').textContent=t.lbl_days;
+  s('tab-unlimited').textContent=t.tab_unlimited;s('tab-fixed').textContent=t.tab_fixed;
+  s('note-hotspot').textContent=t.note_hotspot;s('note-delivery').textContent=t.note_delivery;s('note-vpn').textContent=t.note_vpn;
+  s('unavail-msg').textContent=t.unavail_msg;s('tt-label').textContent=t.tt_label;s('disc-badge').textContent=t.disc;s('wa-text').textContent=t.btn_order;
+  const csel=s('sel-country');csel.options[0].text=t.c_cn;csel.options[1].text=t.c_jp;csel.options[2].text=t.c_kr;
+  s('how-tag').textContent=t.how_tag;s('how-title').textContent=t.how_title;s('how-sub').textContent=t.how_sub;
+  s('step1-title').textContent=t.step1_title;s('step1-desc').textContent=t.step1_desc;
+  s('step2-title').textContent=t.step2_title;s('step2-desc').textContent=t.step2_desc;
+  s('step3-title').textContent=t.step3_title;s('step3-desc').textContent=t.step3_desc;
+  s('why-tag').textContent=t.why_tag;s('why-title').textContent=t.why_title;s('why-sub').textContent=t.why_sub;
+  for(let i=1;i<=6;i++){s('why'+i+'-title').textContent=t['why'+i+'_title'];s('why'+i+'-desc').textContent=t['why'+i+'_desc'];}
+  for(let i=1;i<=4;i++) s('badge'+i).textContent=t['badge'+i];
+  s('rev-tag').textContent=t.rev_tag;s('rev-title').textContent=t.rev_title;s('rev-sub').textContent=t.rev_sub;
+  s('faq-tag').textContent=t.faq_tag;s('faq-title').textContent=t.faq_title;s('faq-sub').textContent=t.faq_sub;
+  for(let i=1;i<=7;i++){s('faq-q'+i).textContent=t['faq_q'+i];s('faq-a'+i).textContent=t['faq_a'+i];}
+  s('cta-title').textContent=t.cta_title;s('cta-sub').textContent=t.cta_sub;s('cta-btn').textContent=t.cta_btn;s('cta-trust').innerHTML=t.cta_trust;
+  s('footer-made').textContent=t.footer_made;
+  if(currentMode==='unlimited') onUplanChange(); else onGbChange();
+  renderPrice();
 }
 
-function populateUplans() {
-  const plans = Object.keys(PRICING[currentCountry].unlimited);
-  const sel = document.getElementById('sel-uplan');
-  sel.innerHTML = plans.map(p=>`<option value="${p}">${p}</option>`).join('');
+function switchMode(mode){
+  currentMode=mode;
+  document.getElementById('tab-unlimited').classList.toggle('active',mode==='unlimited');
+  document.getElementById('tab-fixed').classList.toggle('active',mode==='fixed');
+  document.getElementById('mode-unlimited').style.display=mode==='unlimited'?'':'none';
+  document.getElementById('mode-fixed').style.display=mode==='fixed'?'':'none';
+  if(mode==='unlimited') populateUplans(); else populateGb();
+}
+
+function onCountryChange(){
+  currentCountry=document.getElementById('sel-country').value;
+  if(currentMode==='unlimited') populateUplans(); else populateGb();
+}
+
+function dayLabel(d){
+  const t=T[currentLang],n=parseInt(d);
+  return currentLang==='zh'?`${d}${t.days}`:`${d} ${n>1?t.days:t.day}`;
+}
+
+function populateUplans(){
+  const plans=Object.keys(PRICING[currentCountry].unlimited);
+  document.getElementById('sel-uplan').innerHTML=plans.map(p=>`<option value="${p}">${p}</option>`).join('');
   onUplanChange();
 }
 
-function onUplanChange() {
-  const plan = document.getElementById('sel-uplan').value;
-  const days = Object.keys(PRICING[currentCountry].unlimited[plan]||{});
-  const sel = document.getElementById('sel-udays');
-  sel.innerHTML = days.map(d=>`<option value="${d}">${d} Day${parseInt(d)>1?'s':''}</option>`).join('');
+function onUplanChange(){
+  const plan=document.getElementById('sel-uplan').value;
+  const days=Object.keys(PRICING[currentCountry].unlimited[plan]||{});
+  document.getElementById('sel-udays').innerHTML=days.map(d=>`<option value="${d}">${dayLabel(d)}</option>`).join('');
   renderPrice();
 }
 
-function populateGb() {
-  const gbKeys = Object.keys(PRICING[currentCountry].fixed);
-  const sel = document.getElementById('sel-gb');
-  sel.innerHTML = gbKeys.map(g=>`<option value="${g}">${g}</option>`).join('');
+function populateGb(){
+  const gbKeys=Object.keys(PRICING[currentCountry].fixed);
+  document.getElementById('sel-gb').innerHTML=gbKeys.map(g=>`<option value="${g}">${g}</option>`).join('');
   onGbChange();
 }
 
-function onGbChange() {
-  const gb = document.getElementById('sel-gb').value;
-  const days = Object.keys(PRICING[currentCountry].fixed[gb]||{});
-  const sel = document.getElementById('sel-fdays');
-  sel.innerHTML = days.map(d=>`<option value="${d}">${d} Day${parseInt(d)>1?'s':''}</option>`).join('');
+function onGbChange(){
+  const gb=document.getElementById('sel-gb').value;
+  const days=Object.keys(PRICING[currentCountry].fixed[gb]||{});
+  document.getElementById('sel-fdays').innerHTML=days.map(d=>`<option value="${d}">${dayLabel(d)}</option>`).join('');
   renderPrice();
 }
 
-function renderPrice() {
-  const c = PRICING[currentCountry];
-  let plan, days, price, planLabel;
-
-  if (currentMode==='unlimited') {
-    plan = document.getElementById('sel-uplan').value;
-    days = document.getElementById('sel-udays').value;
-    const planData = c.unlimited[plan]||{};
-    price = planData[days];
-    planLabel = `${c.flag} ${c.name} · ${plan} · ${days} Day${parseInt(days)>1?'s':''}`;
+function renderPrice(){
+  const t=T[currentLang];
+  let plan,days,price;
+  if(currentMode==='unlimited'){
+    plan=document.getElementById('sel-uplan').value;
+    days=document.getElementById('sel-udays').value;
+    price=plan&&days?(PRICING[currentCountry].unlimited[plan]||{})[days]:null;
   } else {
-    plan = document.getElementById('sel-gb').value;
-    days = document.getElementById('sel-fdays').value;
-    const planData = c.fixed[plan]||{};
-    price = planData[days];
-    planLabel = `${c.flag} ${c.name} · ${plan} · ${days} Day${parseInt(days)>1?'s':''}`;
+    plan=document.getElementById('sel-gb').value;
+    days=document.getElementById('sel-fdays').value;
+    price=plan&&days?(PRICING[currentCountry].fixed[plan]||{})[days]:null;
   }
-
-  const unavailBox = document.getElementById('unavail-box');
-  const priceBox = document.getElementById('price-box');
-  const waLink = document.getElementById('wa-link');
-
-  if (!price) {
-    unavailBox.style.display = 'block';
-    priceBox.style.opacity = '0.3';
-    document.getElementById('price-amt').textContent = 'RM —';
-    document.getElementById('price-label').textContent = 'Plan not available';
-    document.getElementById('plan-note-china').style.display = 'none';
+  const flag=currentCountry==='cn'?'🇨🇳':currentCountry==='jp'?'🇯🇵':'🇰🇷';
+  const cname=t[currentCountry];
+  const planLabel=plan&&days?`${flag} ${cname} · ${plan} · ${dayLabel(days)}`:t.price_select;
+  const unavailBox=document.getElementById('unavail-box');
+  const priceBox=document.getElementById('price-box');
+  const waLink=document.getElementById('wa-link');
+  const tooltipWrap=document.getElementById('tooltip-wrap');
+  if(!price){
+    unavailBox.style.display=plan&&days?'block':'none';
+    priceBox.style.opacity='0.4';
+    document.getElementById('price-amt').textContent='RM —';
+    document.getElementById('price-orig').textContent='';
+    document.getElementById('disc-badge').style.display='none';
+    document.getElementById('price-label').textContent=t.price_select;
+    document.getElementById('plan-note-china').style.display='none';
+    tooltipWrap.style.display='none';
     waLink.classList.add('disabled');
-    showSuggestions(c, currentMode);
+    document.getElementById('wa-text').textContent=t.btn_order;
+    if(plan&&days) showSuggestions();
     return;
   }
-
-  unavailBox.style.display = 'none';
-  priceBox.style.opacity = '1';
-  waLink.classList.remove('disabled');
-
-  // Show China VPN note
-  document.getElementById('plan-note-china').style.display = currentCountry === 'cn' ? 'block' : 'none';
-
-  document.getElementById('price-amt').textContent = `RM ${price.toFixed(2)}`;
-  document.getElementById('price-label').textContent = planLabel;
-  document.getElementById('wa-text').textContent = `Order ${c.name} eSIM — ${plan} ${days}D`;
-
-  const msg = encodeURIComponent(`Hi Lunara! I'd like to purchase:\n\n🌏 Country: ${c.name}\n📶 Plan: ${plan}\n📅 Duration: ${days} Days\n💰 Price: RM ${price.toFixed(2)}\n\nPlease assist 🙏`);
-  waLink.href = `https://wa.me/60163138539?text=${msg}`;
+  unavailBox.style.display='none';priceBox.style.opacity='1';waLink.classList.remove('disabled');
+  document.getElementById('plan-note-china').style.display=currentCountry==='cn'?'block':'none';
+  const speedData=currentMode==='unlimited'&&SPEED_DESC[currentCountry]&&SPEED_DESC[currentCountry][plan];
+  if(speedData){document.getElementById('tooltip-text').textContent=speedData[currentLang]+' '+t.speed_reset;tooltipWrap.style.display='block';}
+  else tooltipWrap.style.display='none';
+  const discPrice=Math.round(price*0.95*20)/20;
+  document.getElementById('price-orig').textContent=`RM ${price.toFixed(2)}`;
+  document.getElementById('price-amt').textContent=`RM ${discPrice.toFixed(2)}`;
+  document.getElementById('disc-badge').style.display='block';
+  document.getElementById('disc-badge').textContent=t.disc;
+  document.getElementById('price-label').textContent=planLabel;
+  document.getElementById('wa-text').textContent=t.btn_order;
+  const cnEn=currentCountry==='cn'?'China':currentCountry==='jp'?'Japan':'South Korea';
+  const msg=encodeURIComponent(`Hi Lunara! I would like to purchase an eSIM plan:\n\nCountry: ${cnEn}\nPlan: ${plan}\nDuration: ${days} Days\nPrice: RM ${discPrice.toFixed(2)} (5% off from RM ${price.toFixed(2)})\n\nPlease assist, thank you!`);
+  waLink.href=`https://wa.me/60163138539?text=${msg}`;
 }
 
-function showSuggestions(c, mode) {
-  const pool = mode==='unlimited' ? c.unlimited : c.fixed;
-  const btns = document.getElementById('suggest-btns');
-  btns.innerHTML = '';
-  // show up to 4 available combos
-  let count = 0;
-  for (const [planName, daysObj] of Object.entries(pool)) {
-    for (const [d, price] of Object.entries(daysObj)) {
-      if (count >= 4) break;
-      const btn = document.createElement('button');
-      btn.className = 'suggest-btn';
-      btn.textContent = `${planName} ${d}D — RM ${price.toFixed(2)}`;
-      btn.onclick = () => applySuggestion(mode, planName, d);
-      btns.appendChild(btn);
-      count++;
+function showSuggestions(){
+  const pool=currentMode==='unlimited'?PRICING[currentCountry].unlimited:PRICING[currentCountry].fixed;
+  const btns=document.getElementById('suggest-btns');btns.innerHTML='';
+  let count=0;
+  for(const[planName,daysObj]of Object.entries(pool)){
+    for(const[d,price]of Object.entries(daysObj)){
+      if(count>=4) break;
+      const btn=document.createElement('button');btn.className='suggest-btn';
+      btn.textContent=`${planName} ${dayLabel(d)} — RM ${price.toFixed(2)}`;
+      btn.onclick=()=>applySuggestion(currentMode,planName,d);
+      btns.appendChild(btn);count++;
     }
-    if (count >= 4) break;
+    if(count>=4) break;
   }
 }
 
-function applySuggestion(mode, plan, days) {
-  if (mode==='unlimited') {
-    document.getElementById('sel-uplan').value = plan;
-    onUplanChange();
-    setTimeout(() => { document.getElementById('sel-udays').value = days; renderPrice(); }, 50);
-  } else {
-    document.getElementById('sel-gb').value = plan;
-    onGbChange();
-    setTimeout(() => { document.getElementById('sel-fdays').value = days; renderPrice(); }, 50);
-  }
+function applySuggestion(mode,plan,days){
+  if(mode==='unlimited'){document.getElementById('sel-uplan').value=plan;onUplanChange();setTimeout(()=>{document.getElementById('sel-udays').value=days;renderPrice();},50);}
+  else{document.getElementById('sel-gb').value=plan;onGbChange();setTimeout(()=>{document.getElementById('sel-fdays').value=days;renderPrice();},50);}
 }
 
-// FAQ
-function toggleFaq(el) {
-  const isOpen = el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
-  if (!isOpen) el.classList.add('open');
+function toggleFaq(el){
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
+  if(!isOpen) el.classList.add('open');
 }
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
-  });
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});
 });
 
-// Init
 populateUplans();
 </script>
 </body>
