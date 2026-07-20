@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lunara eSIM — Stay Connected Anywhere ✈️</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
   --gold: #FFD54F;
   --gold-light: #FFE599;
   --gold-dark: #e6a800;
+  --blue-btn: #2563eb;
   --white: #ffffff;
   --off-white: #f8f9ff;
   --light-bg: #EEF1FB;
@@ -26,171 +27,154 @@
   --radius-sm: 12px;
   --radius-pill: 999px;
 }
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,42,94,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:0.6rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.nav-logo{display:flex;align-items:center;gap:8px;min-width:0;flex-shrink:1}
-.nav-logo img{height:34px;width:34px;object-fit:contain;flex-shrink:0}
-.nav-logo-text{font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;color:#fff;letter-spacing:-0.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.nav-right{display:flex;align-items:center;gap:7px;flex-shrink:0}
-.lang-bar-nav{display:flex;gap:4px}
-.lang-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:var(--radius-pill);padding:0.28rem 0.6rem;font-size:0.68rem;font-weight:700;cursor:pointer;color:rgba(255,255,255,0.8);font-family:'Poppins',sans-serif;transition:all 0.2s;min-height:32px;display:flex;align-items:center}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,42,94,0.97);backdrop-filter:blur(12px);padding:0.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:40px;width:40px;object-fit:contain}
+.nav-logo-text{font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;color:#fff;letter-spacing:-0.3px}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-bar-nav{display:flex;gap:5px}
+.lang-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:var(--radius-pill);padding:0.3rem 0.7rem;font-size:0.72rem;font-weight:700;cursor:pointer;color:rgba(255,255,255,0.8);font-family:'Poppins',sans-serif;transition:all 0.2s}
 .lang-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy-dark)}
-.nav-cta{background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-pill);padding:0.45rem 0.9rem;font-size:0.76rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:5px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s;white-space:nowrap;min-height:36px}
+.lang-btn:hover:not(.active){background:rgba(255,255,255,0.2)}
+.nav-cta{background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-pill);padding:0.55rem 1.2rem;font-size:0.83rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--gold-light);transform:scale(1.04)}
 
-/* ── HERO ── */
-.hero{background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 60%,#2a3d8f 100%);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 1.25rem 2.5rem;position:relative;overflow:hidden}
-.hero-stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1.5px 1.5px at 15% 20%,rgba(255,255,255,0.7) 0%,transparent 100%),radial-gradient(1px 1px at 45% 10%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(2px 2px at 70% 30%,rgba(245,200,66,0.6) 0%,transparent 100%),radial-gradient(1px 1px at 85% 15%,rgba(255,255,255,0.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 30% 70%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(1px 1px at 90% 70%,rgba(245,200,66,0.4) 0%,transparent 100%)}
-.hero-logo{width:140px;height:140px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;animation:float 3.5s ease-in-out infinite;overflow:hidden}
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 60%,#2a3d8f 100%);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 3rem;position:relative;overflow:hidden}
+.hero-stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1.5px 1.5px at 15% 20%,rgba(255,255,255,0.7) 0%,transparent 100%),radial-gradient(1px 1px at 45% 10%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(2px 2px at 70% 30%,rgba(245,200,66,0.6) 0%,transparent 100%),radial-gradient(1px 1px at 85% 15%,rgba(255,255,255,0.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 30% 70%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(1px 1px at 90% 70%,rgba(245,200,66,0.4) 0%,transparent 100%),radial-gradient(1px 1px at 10% 85%,rgba(255,255,255,0.5) 0%,transparent 100%)}
+.hero-logo{width:200px;height:200px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;animation:float 3.5s ease-in-out infinite;overflow:hidden}
 .hero-logo img{width:100%;height:100%;object-fit:contain}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,200,66,0.15);border:1.5px solid rgba(245,200,66,0.4);color:var(--gold);border-radius:var(--radius-pill);padding:0.38rem 1rem;font-size:0.76rem;font-weight:700;margin-bottom:0.9rem;letter-spacing:0.03em}
-.hero h1{font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:white;line-height:1.18;margin-bottom:0.85rem}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,200,66,0.15);border:1.5px solid rgba(245,200,66,0.4);color:var(--gold);border-radius:var(--radius-pill);padding:0.35rem 1rem;font-size:0.78rem;font-weight:700;margin-bottom:1rem;letter-spacing:0.04em}
+.hero h1{font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(2rem,7vw,3.2rem);color:white;line-height:1.15;margin-bottom:1rem}
 .hero h1 span{color:var(--gold)}
-.hero-sub{color:rgba(255,255,255,0.78);font-size:0.9rem;max-width:340px;margin:0 auto 1.75rem;line-height:1.65;text-align:center}
-.hero-btns{display:flex;flex-direction:column;gap:10px;justify-content:center;align-items:center;width:100%;max-width:300px;margin:0 auto 2rem}
-.btn-gold{background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-pill);padding:1rem 1.6rem;font-size:0.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s;width:100%;min-height:52px}
-.btn-wa-hero{background:#25D366;color:white;border:none;border-radius:var(--radius-pill);padding:1rem 1.6rem;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s;width:100%;min-height:52px}
-.flags-row{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;max-width:320px;margin:0 auto}
-.flag-chip{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-pill);padding:0.32rem 0.75rem;color:rgba(255,255,255,0.85);font-size:0.76rem;font-weight:600;display:flex;align-items:center;gap:5px}
-.flags-label{color:rgba(255,255,255,0.45);font-size:0.74rem;width:100%;text-align:center;margin-bottom:4px}
+.hero-sub{color:rgba(255,255,255,0.75);font-size:clamp(0.88rem,3vw,1rem);max-width:380px;margin:0 auto 2rem;line-height:1.6;text-align:center}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-gold{background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-pill);padding:0.9rem 1.8rem;font-size:0.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s}
+.btn-gold:hover{transform:translateY(-2px);background:var(--gold-light)}
+.btn-wa-hero{background:#25D366;color:white;border:none;border-radius:var(--radius-pill);padding:0.9rem 1.8rem;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s}
+.btn-wa-hero:hover{background:#1aad54;transform:translateY(-2px)}
+.flags-row{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.flag-chip{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-pill);padding:0.3rem 0.75rem;color:rgba(255,255,255,0.85);font-size:0.75rem;font-weight:600;display:flex;align-items:center;gap:5px}
+.flags-label{color:rgba(255,255,255,0.45);font-size:0.72rem;margin-right:4px}
 
-/* ── TRUST BAR ── */
-.trust-bar{background:var(--gold);padding:0.95rem 0;overflow:hidden}
-.trust-scroll{display:flex;gap:2rem;align-items:center;animation:scroll-x 22s linear infinite;width:max-content}
-.trust-item{display:flex;align-items:center;gap:7px;white-space:nowrap;font-weight:700;font-size:0.8rem;color:var(--navy-dark)}
+/* TRUST BAR */
+.trust-bar{background:var(--gold);padding:1.1rem 1.5rem;overflow:hidden;position:relative}
+.trust-scroll{display:flex;gap:2.5rem;align-items:center;animation:scroll-x 22s linear infinite;width:max-content}
+.trust-item{display:flex;align-items:center;gap:8px;white-space:nowrap;font-weight:700;font-size:0.83rem;color:var(--navy-dark)}
 @keyframes scroll-x{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── SECTIONS ── */
-section{padding:2.75rem 1.25rem}
-.section-tag{display:inline-block;background:rgba(245,200,66,0.15);color:var(--gold-dark);border-radius:var(--radius-pill);padding:0.3rem 0.85rem;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;margin-bottom:0.55rem}
-.section-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.65rem;color:var(--navy);margin-bottom:0.35rem;line-height:1.2}
-.section-sub{color:var(--text-mid);font-size:0.86rem;margin-bottom:1.75rem;text-align:center;line-height:1.55}
+/* SECTIONS */
+section{padding:3.5rem 1.5rem}
+.section-tag{display:inline-block;background:rgba(245,200,66,0.15);color:var(--gold-dark);border-radius:var(--radius-pill);padding:0.3rem 0.9rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;margin-bottom:0.6rem}
+.section-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(1.5rem,5vw,2rem);color:var(--navy);margin-bottom:0.4rem}
+.section-sub{color:var(--text-mid);font-size:0.88rem;margin-bottom:2rem;text-align:center}
 .text-center{text-align:center}
 
-/* ── PLAN SELECTOR ── */
+/* PLAN SELECTOR */
 #plans{background:var(--off-white)}
-.selector-wrap{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem;max-width:520px;margin:0 auto}
-.mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
-.mode-tab{padding:0.7rem 0.5rem;border:2px solid #dde2f5;border-radius:var(--radius-sm);font-size:0.8rem;font-weight:700;font-family:'Poppins',sans-serif;color:var(--text-mid);background:var(--off-white);cursor:pointer;transition:all 0.2s;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center}
+.selector-wrap{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;max-width:520px;margin:0 auto}
+.mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.mode-tab{padding:0.65rem;border:2px solid #dde2f5;border-radius:var(--radius-sm);font-size:0.83rem;font-weight:700;font-family:'Poppins',sans-serif;color:var(--text-mid);background:var(--off-white);cursor:pointer;transition:all 0.2s;text-align:center}
 .mode-tab.active{border-color:var(--navy);background:var(--navy);color:white}
-.sel-label{font-size:0.68rem;font-weight:700;color:var(--text-light);letter-spacing:0.07em;margin-bottom:5px;text-transform:uppercase}
+.sel-label{font-size:0.7rem;font-weight:700;color:var(--text-light);letter-spacing:0.07em;margin-bottom:5px;text-transform:uppercase}
 .sel-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .sel-full{margin-bottom:12px}
-select{width:100%;padding:13px 30px 13px 12px;font-size:0.9rem;border:1.5px solid #dde2f5;border-radius:var(--radius-sm);color:var(--navy);background:var(--off-white);font-family:'Poppins',sans-serif;font-weight:600;appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%231a2a5e' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;min-height:48px}
+select{width:100%;padding:11px 28px 11px 10px;font-size:0.85rem;border:1.5px solid #dde2f5;border-radius:var(--radius-sm);color:var(--navy);background:var(--off-white);font-family:'Poppins',sans-serif;font-weight:600;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%231a2a5e' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
 select:focus{outline:none;border-color:var(--navy)}
-
-.price-result{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:1.1rem 1rem;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;position:relative}
+.price-result{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:1.2rem;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;position:relative}
 .price-main{color:white}
-.price-orig{font-size:0.95rem;font-weight:700;color:rgba(255,100,100,0.85);text-decoration:line-through;text-decoration-color:rgba(255,80,80,1);text-decoration-thickness:2px;margin-bottom:2px;min-height:1.15rem}
-.price-amount{font-family:'Nunito',sans-serif;font-size:2.4rem;font-weight:900;color:var(--gold);line-height:1.1}
-.price-period{font-size:0.76rem;color:rgba(255,255,255,0.7);margin-top:3px;line-height:1.4}
-.disc-badge{background:rgba(255,60,60,0.35);color:#ffbbbb;border:1px solid rgba(255,100,100,0.4);border-radius:var(--radius-pill);padding:6px 12px;font-size:0.92rem;font-weight:800}
-
+.price-orig{font-size:1rem;font-weight:700;color:rgba(255,100,100,0.85);text-decoration:line-through;text-decoration-color:rgba(255,80,80,1);text-decoration-thickness:2px;margin-bottom:2px;min-height:1.2rem}
+.price-amount{font-family:'Nunito',sans-serif;font-size:2.2rem;font-weight:900;color:var(--gold)}
+.price-period{font-size:0.78rem;color:rgba(255,255,255,0.7);margin-top:2px}
+.disc-badge{background:rgba(255,60,60,0.35);color:#ffbbbb;border:1px solid rgba(255,100,100,0.4);border-radius:var(--radius-pill);padding:6px 14px;font-size:0.95rem;font-weight:800}
 .tooltip-wrap{position:absolute;top:10px;right:10px}
-.tooltip-icon{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);font-size:0.78rem;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:'Poppins',sans-serif}
-.tooltip-bubble{position:absolute;right:0;top:32px;background:#1a2a5e;border:1.5px solid rgba(255,213,79,0.4);border-radius:10px;padding:10px 13px;width:220px;font-size:0.76rem;color:rgba(255,255,255,0.88);line-height:1.55;z-index:10;display:none;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,0.35)}
+.tooltip-icon{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);font-size:0.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;font-family:'Poppins',sans-serif;line-height:1}
+.tooltip-icon:hover{background:rgba(255,255,255,0.28)}
+.tooltip-bubble{position:absolute;right:0;top:30px;background:#1a2a5e;border:1.5px solid rgba(255,213,79,0.4);border-radius:10px;padding:10px 13px;width:230px;font-size:0.76rem;color:rgba(255,255,255,0.88);line-height:1.55;z-index:10;display:none;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,0.35)}
 .tooltip-bubble::before{content:'';position:absolute;top:-7px;right:6px;width:12px;height:12px;background:#1a2a5e;border-left:1.5px solid rgba(255,213,79,0.4);border-top:1.5px solid rgba(255,213,79,0.4);transform:rotate(45deg)}
-.tb-label{color:var(--gold);font-weight:700;font-size:0.7rem;margin-bottom:4px;letter-spacing:0.04em;text-transform:uppercase}
-.tooltip-wrap:hover .tooltip-bubble,.tooltip-wrap:focus-within .tooltip-bubble{display:block}
-
+.tb-label{color:var(--gold);font-weight:700;font-size:0.72rem;margin-bottom:5px;letter-spacing:0.04em;text-transform:uppercase}
+.tooltip-wrap:hover .tooltip-bubble{display:block}
 .unavail-box{background:#fff8e0;border:2px solid var(--gold);border-radius:var(--radius-sm);padding:1rem;text-align:center;display:none;margin-bottom:12px}
-.unavail-box p{font-size:0.84rem;color:var(--navy);font-weight:600;margin-bottom:8px;line-height:1.45}
+.unavail-box p{font-size:0.85rem;color:var(--navy);font-weight:600;margin-bottom:8px}
 .suggest-btns{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.suggest-btn{background:var(--light-bg);color:var(--navy);border:1.5px solid #dde2f5;border-radius:var(--radius-pill);padding:8px 12px;font-size:0.74rem;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.15s;min-height:36px}
-
-.plan-notes{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
-.plan-note{background:var(--light-bg);color:var(--navy);border-radius:var(--radius-pill);padding:0.32rem 0.75rem;font-size:0.72rem;font-weight:600;display:flex;align-items:center;gap:4px;line-height:1.3}
-.plan-note-vpn{background:#fff0f0;color:#b91c1c;border:1.5px solid #fca5a5;border-radius:var(--radius-pill);padding:0.35rem 0.85rem;font-size:0.73rem;font-weight:700;display:inline-flex;align-items:center;gap:5px;margin-bottom:12px}
-.wa-btn{width:100%;padding:1.05rem;background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-sm);font-size:1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Poppins',sans-serif;transition:all 0.2s;text-decoration:none;min-height:54px}
+.suggest-btn{background:var(--light-bg);color:var(--navy);border:1.5px solid #dde2f5;border-radius:var(--radius-pill);padding:5px 12px;font-size:0.75rem;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.15s}
+.suggest-btn:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.plan-notes{display:flex;gap:7px;margin-bottom:8px;flex-wrap:wrap}
+.plan-note{background:var(--light-bg);color:var(--navy);border-radius:var(--radius-pill);padding:0.28rem 0.7rem;font-size:0.7rem;font-weight:600;display:flex;align-items:center;gap:4px}
+.plan-note-vpn{background:#fff0f0;color:#b91c1c;border:1.5px solid #fca5a5;border-radius:var(--radius-pill);padding:0.32rem 0.85rem;font-size:0.72rem;font-weight:700;display:inline-flex;align-items:center;gap:5px;margin-bottom:12px}
+.wa-btn{width:100%;padding:1rem;background:var(--gold);color:var(--navy-dark);border:none;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Poppins',sans-serif;transition:all 0.2s;text-decoration:none}
+.wa-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
 .wa-btn.disabled{background:#ccc;color:#888;pointer-events:none}
 
-/* ── HOW IT WORKS ── */
+/* HOW IT WORKS */
 #how{background:white}
 .steps{display:flex;flex-direction:column;gap:0;max-width:400px;margin:0 auto}
-.step{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 0;position:relative}
-.step:not(:last-child)::after{content:'';position:absolute;left:19px;top:58px;width:2px;height:calc(100% - 16px);background:linear-gradient(to bottom,var(--gold),rgba(245,200,66,0.1))}
+.step{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;position:relative}
+.step:not(:last-child)::after{content:'';position:absolute;left:19px;top:62px;width:2px;height:calc(100% - 20px);background:linear-gradient(to bottom,var(--gold),rgba(245,200,66,0.1))}
 .step-num{width:40px;height:40px;flex-shrink:0;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;box-shadow:0 4px 14px rgba(26,42,94,0.25)}
-.step-icon{font-size:1.4rem;margin-bottom:3px}
-.step-title{font-weight:700;font-size:0.97rem;color:var(--navy);margin-bottom:4px;line-height:1.25}
-.step-desc{font-size:0.84rem;color:var(--text-mid);line-height:1.6}
+.step-icon{font-size:1.5rem;margin-bottom:4px}
+.step-title{font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:3px}
+.step-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.5;text-align:justify}
 
-/* ── WHY ── */
+/* WHY */
 #why{background:var(--navy);color:white}
 #why .section-title{color:white}
 #why .section-sub{color:rgba(255,255,255,0.6)}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:520px;margin:0 auto}
-.why-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:1rem}
-.why-emoji{font-size:1.4rem;margin-bottom:5px}
-.why-title{font-weight:700;font-size:0.86rem;color:var(--gold);margin-bottom:4px;line-height:1.25}
-.why-desc{font-size:0.77rem;color:rgba(255,255,255,0.65);line-height:1.55}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px;margin:0 auto}
+.why-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:1.1rem;transition:background 0.2s}
+.why-card:hover{background:rgba(255,255,255,0.12)}
+.why-emoji{font-size:1.5rem;margin-bottom:6px}
+.why-title{font-weight:700;font-size:0.85rem;color:var(--gold);margin-bottom:4px}
+.why-desc{font-size:0.76rem;color:rgba(255,255,255,0.65);line-height:1.5;text-align:justify}
 .why-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:1.5rem;max-width:520px;margin-left:auto;margin-right:auto}
-.why-badge{background:rgba(245,200,66,0.15);border:1px solid rgba(245,200,66,0.3);color:var(--gold);border-radius:var(--radius-pill);padding:0.4rem 0.9rem;font-size:0.74rem;font-weight:700;display:flex;align-items:center;gap:5px;line-height:1.3;text-align:center}
+.why-badge{background:rgba(245,200,66,0.15);border:1px solid rgba(245,200,66,0.3);color:var(--gold);border-radius:var(--radius-pill);padding:0.4rem 1rem;font-size:0.75rem;font-weight:700;display:flex;align-items:center;gap:5px}
 
-/* ── REVIEWS ── */
+/* REVIEWS */
 #reviews{background:var(--off-white)}
-.reviews-grid{display:flex;flex-direction:column;gap:12px;max-width:480px;margin:0 auto}
-.review-card{background:white;border-radius:var(--radius-sm);padding:1.1rem;box-shadow:var(--shadow-sm)}
-.review-header{display:flex;align-items:center;gap:10px;margin-bottom:0.65rem}
-.review-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.95rem;flex-shrink:0}
-.review-name{font-weight:700;font-size:0.9rem;color:var(--navy)}
-.review-meta{font-size:0.73rem;color:var(--text-light);line-height:1.4;margin-top:2px}
-.review-stars{color:var(--gold);font-size:0.88rem;margin-bottom:5px;letter-spacing:1px}
-.review-text{font-size:0.85rem;color:var(--text-mid);line-height:1.65}
+.reviews-grid{display:flex;flex-direction:column;gap:14px;max-width:480px;margin:0 auto}
+.review-card{background:white;border-radius:var(--radius-sm);padding:1.2rem;box-shadow:var(--shadow-sm)}
+.review-header{display:flex;align-items:center;gap:10px;margin-bottom:0.7rem}
+.review-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;flex-shrink:0}
+.review-name{font-weight:700;font-size:0.88rem;color:var(--navy)}
+.review-meta{font-size:0.73rem;color:var(--text-light)}
+.review-stars{color:var(--gold);font-size:0.85rem;margin-bottom:4px}
+.review-text{font-size:0.83rem;color:var(--text-mid);line-height:1.6;text-align:justify}
 
-/* ── FAQ ── */
+/* FAQ */
 #faq{background:white}
 .faq-list{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
 .faq-item{border:1.5px solid #dde2f5;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer}
-.faq-q{padding:1rem 1rem;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:0.9rem;color:var(--navy);background:white;transition:background 0.15s;gap:10px;line-height:1.4;min-height:54px}
+.faq-q{padding:1rem 1.1rem;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:0.88rem;color:var(--navy);background:white;transition:background 0.15s}
 .faq-q:hover{background:var(--off-white)}
-.faq-toggle{font-size:1.2rem;transition:transform 0.25s;flex-shrink:0;color:var(--text-light)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.2s;font-size:0.86rem;color:var(--text-mid);line-height:1.65;padding:0 1rem;background:var(--off-white)}
-.faq-item.open .faq-a{max-height:320px;padding:0.9rem 1rem}
+.faq-toggle{font-size:1.1rem;transition:transform 0.25s;flex-shrink:0;margin-left:8px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.2s;font-size:0.83rem;color:var(--text-mid);line-height:1.6;padding:0 1.1rem;background:var(--off-white);text-align:justify}
+.faq-item.open .faq-a{max-height:300px;padding:0.9rem 1.1rem}
 .faq-item.open .faq-toggle{transform:rotate(45deg)}
 .dial-tip{display:inline-block;background:var(--light-bg);color:var(--navy);border-radius:var(--radius-sm);padding:0.4rem 0.8rem;font-size:0.8rem;font-weight:700;margin-top:8px;font-family:monospace}
 
-/* ── FINAL CTA ── */
-#cta-final{background:linear-gradient(135deg,var(--navy) 0%,#2a3d8f 100%);padding:3rem 1.25rem;text-align:center}
-#cta-final h2{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.65rem;color:white;margin-bottom:0.6rem;line-height:1.2}
-#cta-final p{color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:1.75rem;line-height:1.55}
+/* FINAL CTA */
+#cta-final{background:linear-gradient(135deg,var(--navy) 0%,#2a3d8f 100%);padding:3.5rem 1.5rem;text-align:center}
+#cta-final h2{font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(1.5rem,5vw,2rem);color:white;margin-bottom:0.6rem}
+#cta-final p{color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:2rem}
 .cta-btns{display:flex;flex-direction:column;gap:12px;align-items:center}
-.btn-wa-big{background:#25D366;color:#fff;border:none;border-radius:var(--radius-pill);padding:1.1rem 2rem;font-size:1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s;width:100%;max-width:320px;justify-content:center;min-height:56px}
-.cta-trust{color:rgba(255,255,255,0.55);font-size:0.84rem;line-height:1.65;text-align:center;margin-top:4px}
+.btn-wa-big{background:#25D366;color:#fff;border:none;border-radius:var(--radius-pill);padding:1.1rem 2.2rem;font-size:1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;text-decoration:none;transition:all 0.2s;width:100%;max-width:320px;justify-content:center}
+.btn-wa-big:hover{transform:translateY(-2px);background:#1aad54}
+.cta-trust{color:rgba(255,255,255,0.55);font-size:0.82rem;line-height:1.6;text-align:center}
 
-/* ── FOOTER ── */
-footer{background:var(--navy-dark);padding:1.75rem 1.25rem;text-align:center;color:rgba(255,255,255,0.4);font-size:0.8rem;line-height:1.65}
-footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;margin-bottom:0.4rem}
+/* FOOTER */
+footer{background:var(--navy-dark);padding:2rem 1.5rem;text-align:center;color:rgba(255,255,255,0.4);font-size:0.78rem}
+footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;margin-bottom:0.5rem}
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .fade-in{opacity:0;animation:fadeUp 0.6s ease forwards}
 .delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.35s}.delay-4{animation-delay:0.5s}.delay-5{animation-delay:0.65s}
-
-/* ── TABLET & DESKTOP ── */
-@media(min-width:480px){
-  .hero h1{font-size:2.4rem}
-  .hero-logo{width:170px;height:170px}
-  .hero-btns{flex-direction:row;max-width:none}
-  .btn-gold,.btn-wa-hero{width:auto}
-  .section-title{font-size:1.85rem}
-}
-@media(min-width:640px){
-  nav{padding:0.75rem 1.5rem}
-  .nav-logo-text{font-size:1rem}
-  .lang-btn{font-size:0.75rem;padding:0.3rem 0.75rem}
-  .nav-cta{font-size:0.84rem;padding:0.55rem 1.2rem}
-  section{padding:3.5rem 1.5rem}
-  .hero h1{font-size:2.8rem}
-  .selector-wrap{padding:1.5rem}
-}
-@media(min-width:768px){
-  .hero h1{font-size:3.2rem}
-  .section-title{font-size:2rem}
-}
 </style>
 </head>
 <body>
@@ -207,7 +191,7 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
       <button class="lang-btn" onclick="setLang('bm',this)">BM</button>
       <button class="lang-btn" onclick="setLang('zh',this)">中文</button>
     </div>
-    <a href="#plans" class="nav-cta" id="nav-cta">🛒 Buy</a>
+    <a href="#plans" class="nav-cta" id="nav-cta">🛒 Buy Now</a>
   </div>
 </nav>
 
@@ -305,7 +289,7 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
         <div class="price-amount" id="price-amt">RM —</div>
         <div class="price-period" id="price-label">Select options above</div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;padding-right:28px">
+      <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:5px">
         <div class="disc-badge" id="disc-badge" style="display:none">🎉 5% OFF</div>
       </div>
       <div class="tooltip-wrap" id="tooltip-wrap" style="display:none">
@@ -379,7 +363,7 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
     <div class="why-card"><div class="why-emoji">⚡</div><div class="why-title" id="why1-title">Delivery in ~10 Minutes</div><div class="why-desc" id="why1-desc">QR code sent to your WhatsApp fast after payment — no long waits</div></div>
     <div class="why-card"><div class="why-emoji">💰</div><div class="why-title" id="why2-title">Affordable Prices</div><div class="why-desc" id="why2-desc">Much cheaper than roaming. Honest pricing, zero hidden fees</div></div>
     <div class="why-card"><div class="why-emoji">💬</div><div class="why-title" id="why3-title">BM / English / 中文</div><div class="why-desc" id="why3-desc">Chat with a real human in your preferred language, anytime</div></div>
-    <div class="why-card"><div class="why-emoji">🎥</div><div class="why-title" id="why4-title">Set Up Guide Included</div><div class="why-desc" id="why4-desc">Video tutorials and step-by-step image guides for smooth activation</div></div>
+    <div class="why-card"><div class="why-emoji">🎥</div><div class="why-title" id="why4-title">Set Up Guide Included</div><div class="why-desc" id="why4-desc">We provide both video tutorials and step-by-step image guides for a smooth activation experience</div></div>
     <div class="why-card"><div class="why-emoji">🌍</div><div class="why-title" id="why5-title">Connected on Landing</div><div class="why-desc" id="why5-desc">Pre-install before you fly, activate the moment you land</div></div>
     <div class="why-card"><div class="why-emoji">📱</div><div class="why-title" id="why6-title">Beginner Friendly</div><div class="why-desc" id="why6-desc">First time using eSIM? No worries — we guide you every step</div></div>
   </div>
@@ -421,7 +405,7 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
         <div><div class="review-name">Syafiqah F.</div><div class="review-meta">🇰🇷 Seoul, Korea · 10 Days Unlimited Premium</div></div>
       </div>
       <div class="review-stars">★★★★★</div>
-      <div class="review-text">"First time pakai eSIM, nervous sikit. Tapi team Lunara guide step by step dalam BM sampai berjaya! Jimat duit jimat masa. Memang recommend! 👍"</div>
+      <div class="review-text">"First time pakai eSIM, nervous sikit. Tapi team Lunara guide step by step dalam BM sampai berjaya! Jimat duit jimat masa. Memang recommend untuk semua yang nak travel! 👍"</div>
     </div>
   </div>
 </section>
@@ -440,7 +424,7 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q"><span id="faq-q2">Does my phone support eSIM?</span><span class="faq-toggle">+</span></div>
-      <div class="faq-a" id="faq-a2">Most phones from 2018 onwards support eSIM — including iPhone XS and newer, Samsung Galaxy S20+, Google Pixel 3+, and many more. Not sure? Dial #06# — if you see an EID number, your phone supports eSIM!<br><span class="dial-tip">📞 Dial: *#06#</span></div>
+      <div class="faq-a" id="faq-a2">Most phones from 2018 onwards support eSIM — including iPhone XS and newer, Samsung Galaxy S20+, Google Pixel 3+, and many more. Not sure? Dial #06# — if you see an EID number, your phone supports eSIM!</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q"><span id="faq-q3">How do I activate my eSIM?</span><span class="faq-toggle">+</span></div>
@@ -452,15 +436,15 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q"><span id="faq-q5">What if I run out of data?</span><span class="faq-toggle">+</span></div>
-      <div class="faq-a" id="faq-a5">Just WhatsApp us and we'll arrange a top-up plan quickly. For worry-free travel, we recommend the Unlimited plan — no tracking, no stress!</div>
+      <div class="faq-a" id="faq-a5">Just WhatsApp us and we'll arrange a top-up plan quickly. For worry-free travel, we recommend the Unlimited plan — no tracking, no stress, just browse freely the whole trip!</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q"><span id="faq-q6">How do I pay?</span><span class="faq-toggle">+</span></div>
-      <div class="faq-a" id="faq-a6">Payment is done via WhatsApp — we accept DuitNow QR, online banking, and TNG e-Wallet. Simple, fast, and secure. No card details needed.</div>
+      <div class="faq-a" id="faq-a6">Payment is done via WhatsApp — we accept DuitNow QR, online banking, and TNG e-Wallet. Simple, fast, and secure. No need to enter any card details online.</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span id="faq-q7">How long to receive my eSIM?</span><span class="faq-toggle">+</span></div>
-      <div class="faq-a" id="faq-a7">Most eSIMs are delivered within 10 minutes during operating hours (9AM–9PM). Late-night order? No worries — we'll process it within 12 hours.</div>
+      <div class="faq-q"><span id="faq-q7">How long does it take to receive my eSIM?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a" id="faq-a7">Most eSIMs are delivered within 10 minutes during operating hours (9AM–9PM). Late-night order? No worries — we'll process it within 12 hours once our team is back online.</div>
     </div>
   </div>
 </section>
@@ -479,13 +463,13 @@ footer .footer-logo{color:var(--gold);font-family:'Nunito',sans-serif;font-weigh
 <footer>
   <div class="footer-logo">🌙 LUNARA eSIM</div>
   <p>© 2025 Lunara eSIM · WhatsApp: 016-3138539</p>
-  <p style="margin-top:5px" id="footer-made">Made with ❤️ for Malaysian travellers</p>
+  <p style="margin-top:6px" id="footer-made">Made with ❤️ for Malaysian travellers</p>
 </footer>
 
 <script>
-const T={
-  en:{
-    nav_buy:"🛒 Buy",hero_badge:"✈️ Malaysia's Friendliest eSIM Store",hero_title:"Stay Connected",hero_span:"Anywhere You Go",
+const T = {
+  en: {
+    nav_buy:"🛒 Buy Now",hero_badge:"✈️ Malaysia's Friendliest eSIM Store",hero_title:"Stay Connected",hero_span:"Anywhere You Go",
     hero_sub:"No roaming fees. No physical SIM.<br>Scan, activate, and explore — ready in minutes.",
     hero_btn_find:"🔍 Find My Plan",hero_btn_chat:"💬 Chat with Us",hero_available:"Available for",hero_more:"+ More soon",
     plans_tag:"🔍 FIND YOUR PLAN",plans_title:"Pick. Choose. Travel.",plans_sub:"Select your destination, data type & duration — price updates instantly!",
@@ -503,7 +487,7 @@ const T={
     why1_title:"Delivery in ~10 Minutes",why1_desc:"QR code sent to your WhatsApp fast after payment — no long waits",
     why2_title:"Affordable Prices",why2_desc:"Much cheaper than roaming. Honest pricing, zero hidden fees",
     why3_title:"BM / English / 中文",why3_desc:"Chat with a real human in your preferred language, anytime",
-    why4_title:"Set Up Guide Included",why4_desc:"Video tutorials and step-by-step image guides for smooth activation",
+    why4_title:"Set Up Guide Included",why4_desc:"We provide both video tutorials and step-by-step image guides for a smooth activation experience",
     why5_title:"Connected on Landing",why5_desc:"Pre-install before you fly, activate the moment you land",
     why6_title:"Beginner Friendly",why6_desc:"First time using eSIM? No worries — we guide you every step",
     badge1:"✅ Trusted by Malaysian Travellers",badge2:"✅ Compatible with Most iPhones & Android",badge3:"✅ No Physical SIM Needed",badge4:"✅ Works The Moment You Land",
@@ -513,16 +497,15 @@ const T={
     faq_q2:"Does my phone support eSIM?",faq_a2:"Most phones from 2018 onwards support eSIM — including iPhone XS and newer, Samsung Galaxy S20+, Google Pixel 3+, and many more. Not sure? Dial #06# — if you see an EID number, your phone supports eSIM!",
     faq_q3:"How do I activate my eSIM?",faq_a3:"After payment, we send you a QR code + step-by-step guide on WhatsApp. Go to Settings → Mobile Data → Add eSIM → Scan QR Code. You can pre-install before your trip and activate when you land.",
     faq_q4:"Can I use hotspot / share data?",faq_a4:"Yes! Most of our plans support mobile hotspot so you can share with travel companions. Great for families and groups travelling together!",
-    faq_q5:"What if I run out of data?",faq_a5:"Just WhatsApp us and we'll arrange a top-up plan quickly. For worry-free travel, we recommend the Unlimited plan — no tracking, no stress!",
-    faq_q6:"How do I pay?",faq_a6:"Payment is done via WhatsApp — we accept DuitNow QR, online banking, and TNG e-Wallet. Simple, fast, and secure. No card details needed.",
-    faq_q7:"How long to receive my eSIM?",faq_a7:"Most eSIMs are delivered within 10 minutes during operating hours (9AM–9PM). Late-night order? No worries — we'll process it within 12 hours.",
+    faq_q5:"What if I run out of data?",faq_a5:"Just WhatsApp us and we'll arrange a top-up plan quickly. For worry-free travel, we recommend the Unlimited plan — no tracking, no stress, just browse freely the whole trip!",
+    faq_q6:"How do I pay?",faq_a6:"Payment is done via WhatsApp — we accept DuitNow QR, online banking, and TNG e-Wallet. Simple, fast, and secure. No need to enter any card details online.",
+    faq_q7:"How long does it take to receive my eSIM?",faq_a7:"Most eSIMs are delivered within 10 minutes during operating hours (9AM–9PM). Late-night order? No worries — we'll process it within 12 hours once our team is back online.",
     cta_title:"Ready to Travel Stress-Free?",cta_sub:"Order your eSIM in 2 minutes. We'll handle the rest. ✈️",cta_btn:"💬 Order Now on WhatsApp",cta_trust:"Not sure which plan to choose?<br>Contact us for personalised recommendations.",
     footer_made:"Made with ❤️ for Malaysian travellers",
-    trust1:"⚡ Ready in 10 Minutes",trust2:"📲 QR Code Setup",trust3:"💬 BM / English / 中文 Support",trust4:"🌐 No Physical SIM",trust5:"📋 Setup Guide Provided",trust6:"🇲🇾 Local Malaysian Support",trust7:"💸 No Roaming Charges",trust8:"✅ Trusted by Malaysians",
-    c_cn:"🇨🇳 China",c_jp:"🇯🇵 Japan",c_kr:"🇰🇷 South Korea",cn:"China",jp:"Japan",kr:"South Korea"
+    trust1:"⚡ Ready in 10 Minutes",trust2:"📲 QR Code Setup",trust3:"💬 BM / English / 中文 Support",trust4:"🌐 No Physical SIM",trust5:"📋 Setup Guide Provided",trust6:"🇲🇾 Local Malaysian Support",trust7:"💸 No Roaming Charges",trust8:"✅ Trusted by Malaysians"
   },
-  bm:{
-    nav_buy:"🛒 Beli",hero_badge:"✈️ eSIM Mesra Pengembara Malaysia",hero_title:"Internet Mudah,",hero_span:"Di Mana Sahaja Anda Berada",
+  bm: {
+    nav_buy:"🛒 Dapatkan eSIM Anda",hero_badge:"✈️ eSIM Mesra Pengembara Malaysia",hero_title:"Internet Mudah,",hero_span:"Di Mana Sahaja Anda Berada",
     hero_sub:"Aktif dalam beberapa minit. Tiada roaming mahal.<br>Tiada pertukaran SIM. Terus bersambung sepanjang perjalanan.",
     hero_btn_find:"🔍 Pilih Pelan Saya",hero_btn_chat:"💬 Chat Dengan Kami",hero_available:"🌍 Destinasi Popular",hero_more:"+ Banyak Lagi Akan Ditambah",
     plans_tag:"🔍 CARI PELAN ANDA",plans_title:"Pilih. Tentukan. Kembara.",plans_sub:"Pilih destinasi, jenis data & tempoh — harga akan dikemas kini secara automatik!",
@@ -534,7 +517,7 @@ const T={
     day:"Hari",days:"Hari",
     how_tag:"✨ CARA IA BERFUNGSI",how_title:"3 Langkah Mudah",how_sub:"Mudah, Pantas & Tanpa Kerumitan. Sesiapa sahaja boleh menggunakannya.",
     step1_title:"Pilih Pelan Anda",step1_desc:"Pilih destinasi, jumlah data dan tempoh perjalanan. Buat pesanan terus melalui WhatsApp.",
-    step2_title:"Terima Kod QR eSIM",step2_desc:"Selepas pembayaran, kami akan menghantar kod QR eSIM, panduan pemasangan dan video tutorial melalui WhatsApp.",
+    step2_title:"Terima Kod QR eSIM",step2_desc:"Selepas pembayaran, kami akan menghantar kod QR eSIM, panduan pemasangan dan video tutorial melalui WhatsApp dalam beberapa minit.",
     step3_title:"Imbas & Terus Gunakan",step3_desc:"Imbas kod QR sebelum berlepas dan aktifkan apabila tiba. Terus berhubung sebaik sahaja mendarat.",
     why_tag:"💛 MENGAPA LUNARA?",why_title:"Pilihan Pengembara Malaysia",why_sub:"Perjalanan lebih tenang apabila internet anda sentiasa tersedia.",
     why1_title:"Penghantaran Pantas",why1_desc:"Kod QR eSIM dihantar melalui WhatsApp seawal 10 minit selepas pembayaran",
@@ -555,11 +538,10 @@ const T={
     faq_q7:"Berapa lama saya akan dapat eSIM saya?",faq_a7:"Biasanya dalam 10 minit (9AM–9PM). Order malam akan diproses dalam 12 jam.",
     cta_title:"✈️ Sedia untuk Travel Tanpa Stres?",cta_sub:"2 minit untuk order eSIM anda. Biar kami uruskan yang lain ✈️",cta_btn:"✈️ Travel Tanpa Risau — Chat Sekarang",cta_trust:"Tak Pasti Nak Pilih Plan Mana?<br>Contact Kami Untuk Recommendation Yang Sesuai",
     footer_made:"❤️ Dibuat Khas Untuk Rakyat Malaysia Yang Suka Travel",
-    trust1:"⚡ Siap Digunakan Dalam 10 Minit",trust2:"📲 Setup Guna QR Code",trust3:"💬 Support BM / English / 中文",trust4:"🌐 Tak Perlu SIM Fizikal",trust5:"📋 Guide Setup Disediakan",trust6:"🇲🇾 Support Tempatan Malaysia",trust7:"💸 Tiada Caj Roaming",trust8:"✅ Dipercayai Rakyat Malaysia",
-    c_cn:"🇨🇳 China",c_jp:"🇯🇵 Jepun",c_kr:"🇰🇷 Korea Selatan",cn:"China",jp:"Jepun",kr:"Korea Selatan"
+    trust1:"⚡ Siap Digunakan Dalam 10 Minit",trust2:"📲 Setup Guna QR Code",trust3:"💬 Support BM / English / 中文",trust4:"🌐 Tak Perlu SIM Fizikal",trust5:"📋 Guide Setup Disediakan",trust6:"🇲🇾 Support Tempatan Malaysia",trust7:"💸 Tiada Caj Roaming",trust8:"✅ Dipercayai Rakyat Malaysia"
   },
-  zh:{
-    nav_buy:"🛒 购买",hero_badge:"✈️ 马来西亚值得信赖的 eSIM 商店",hero_title:"无论身在何处，",hero_span:"随时保持连接",
+  zh: {
+    nav_buy:"🛒 立即购买",hero_badge:"✈️ 马来西亚值得信赖的 eSIM 商店",hero_title:"无论身在何处，",hero_span:"随时保持连接",
     hero_sub:"无需漫游费，无需实体SIM卡。<br>扫码即可激活，几分钟内轻松上网。",
     hero_btn_find:"🔍 查找适合我的配套",hero_btn_chat:"💬 联系客服",hero_available:"🌍 覆盖国家地区",hero_more:"更多国家即将上线",
     plans_tag:"🔍 查找您的配套",plans_title:"选择 · 决定 · 出发",plans_sub:"选择目的地、配套类型与使用天数 — 价格将即时更新。",
@@ -592,63 +574,185 @@ const T={
     faq_q7:"多久能收到我的eSIM呢？",faq_a7:"通常 10分钟内发送（9AM–9PM）。夜间订单将在 12小时内处理。",
     cta_title:"✈️ 准备好无忧旅行了吗？",cta_sub:"2分钟完成下单，其余交给我们 ✈️",cta_btn:"✈️ 出国不断网，马上开通",cta_trust:"不确定该选哪个配套？<br>联系我们，我们会根据你的旅行需求推荐最适合的方案",
     footer_made:"❤️ 献给热爱旅行的马来西亚人",
-    trust1:"⚡ 10分钟快速开通",trust2:"📲 QR Code 一扫即用",trust3:"💬 支持 BM / English / 中文",trust4:"🌐 无需实体 SIM 卡",trust5:"📋 附完整安装教学",trust6:"🇲🇾 马来西亚本地客服支持",trust7:"💸 无需支付漫游费",trust8:"✅ 深受马来西亚用户信赖",
-    c_cn:"🇨🇳 中国",c_jp:"🇯🇵 日本",c_kr:"🇰🇷 韩国",cn:"中国",jp:"日本",kr:"韩国"
+    trust1:"⚡ 10分钟快速开通",trust2:"📲 QR Code 一扫即用",trust3:"💬 支持 BM / English / 中文",trust4:"🌐 无需实体 SIM 卡",trust5:"📋 附完整安装教学",trust6:"🇲🇾 马来西亚本地客服支持",trust7:"💸 无需支付漫游费",trust8:"✅ 深受马来西亚用户信赖"
   }
 };
 
-const SPEED_DESC={
-  cn:{"Unlimited":{en:"1GB/day high-speed, then unlimited at 384kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天1GB高速，超出后以384kbps无限使用。"},"Unlimited Plus":{en:"2GB/day high-speed, then unlimited at 384kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天2GB高速，超出后以384kbps无限使用。"}},
-  jp:{"Unlimited":{en:"1GB/day high-speed, then unlimited at 256kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 256kbps.",zh:"每天1GB高速，超出后以256kbps无限使用。"},"Unlimited Plus":{en:"2GB/day high-speed, then unlimited at 256kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 256kbps.",zh:"每天2GB高速，超出后以256kbps无限使用。"},"Unlimited Max":{en:"No speed limit — full 5G speed throughout.",bm:"Tiada had kelajuan — 5G penuh sepanjang perjalanan.",zh:"无速度限制 — 全程5G高速。"}},
-  kr:{"Unlimited":{en:"1GB/day high-speed, then unlimited at 384kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天1GB高速，超出后以384kbps无限使用。"},"Unlimited Plus":{en:"2GB/day high-speed, then unlimited at 384kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天2GB高速，超出后以384kbps无限使用。"},"Unlimited Premium":{en:"5GB/day high-speed, no speed limit.",bm:"5GB/hari data laju, tiada had kelajuan.",zh:"每天5GB高速，无速度限制。"}}
+const SPEED_DESC = {
+  china:{
+    "Unlimited":{en:"1GB/day high-speed data, then unlimited at 384kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天1GB高速流量，超出后以384kbps无限使用。"},
+    "Unlimited Plus":{en:"2GB/day high-speed data, then unlimited at 384kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天2GB高速流量，超出后以384kbps无限使用。"}
+  },
+  japan:{
+    "Unlimited":{en:"1GB/day high-speed data, then unlimited at 256kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 256kbps.",zh:"每天1GB高速流量，超出后以256kbps无限使用。"},
+    "Unlimited Plus":{en:"2GB/day high-speed data, then unlimited at 256kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 256kbps.",zh:"每天2GB高速流量，超出后以256kbps无限使用。"},
+    "Unlimited Max":{en:"No speed limit — full 5G speed throughout your trip.",bm:"Tiada had kelajuan — 5G penuh sepanjang perjalanan.",zh:"无速度限制 — 全程5G高速上网。"}
+  },
+  "south-korea":{
+    "Unlimited":{en:"1GB/day high-speed data, then unlimited at 384kbps.",bm:"1GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天1GB高速流量，超出后以384kbps无限使用。"},
+    "Unlimited Plus":{en:"2GB/day high-speed data, then unlimited at 384kbps.",bm:"2GB/hari data laju, kemudian tanpa had pada 384kbps.",zh:"每天2GB高速流量，超出后以384kbps无限使用。"},
+    "Unlimited Premium":{en:"5GB/day high-speed data, no speed limit.",bm:"5GB/hari data laju, tiada had kelajuan.",zh:"每天5GB高速流量，无速度限制。"}
+  }
 };
 
-const PRICING={
-  cn:{unlimited:{"Unlimited":{"1":4.80,"2":6.80,"3":8.80,"4":11.80,"5":14.80,"6":16.80,"7":19.80,"8":21.80,"9":24.80,"10":26.80,"12":31.80,"15":37.80,"20":50.80,"25":62.80,"30":75.80},"Unlimited Plus":{"1":8.80,"2":10.80,"3":14.80,"4":18.80,"5":22.80,"6":26.80,"7":31.80,"8":34.80,"9":39.80,"10":43.80,"12":52.80,"15":65.80,"20":87.80,"25":108.80,"30":130.80}},fixed:{"1GB":{"3":4.80,"7":5.80},"3GB":{"3":10.80,"7":11.80,"30":12.80},"5GB":{"3":15.80,"7":16.80,"15":17.80,"30":17.80},"10GB":{"3":24.80,"5":25.80,"7":26.80,"10":28.80,"15":30.80,"30":31.80},"20GB":{"3":45.80,"5":49.80,"7":53.80,"10":55.80,"15":57.80,"30":59.80},"30GB":{"3":63.80,"5":67.80,"7":72.80,"10":76.80,"15":80.80,"30":84.80},"50GB":{"3":100.80,"5":104.80,"7":112.80,"10":117.80,"15":123.80,"30":129.80}}},
-  jp:{unlimited:{"Unlimited":{"1":8.50,"2":10.50,"3":12.50,"4":14.50,"5":16.50,"6":18.50,"7":20.50,"8":22.50,"9":24.50,"10":26.50,"11":28.50,"12":30.50,"13":32.50,"14":34.50,"15":36.50,"16":38.50,"17":40.50,"18":42.50,"19":44.50,"20":46.50,"25":56.50,"30":66.50},"Unlimited Plus":{"1":12.50,"2":14.50,"3":18.50,"4":20.50,"5":22.50,"6":24.50,"7":28.50,"8":30.50,"9":34.50,"10":38.50,"11":43.50,"12":47.50,"13":51.50,"14":55.50,"15":59.50,"16":63.50,"17":67.50,"18":71.50,"19":75.50,"20":79.50,"25":99.50,"30":119.50},"Unlimited Max":{"1":18.50,"2":20.50,"3":22.50,"4":24.50,"5":26.50,"6":28.50,"7":32.50,"8":36.50,"9":40.50,"10":44.50,"11":48.50,"12":52.50,"13":56.50,"14":60.50,"15":65.50,"16":70.50,"17":75.50,"18":80.50,"19":85.50,"20":90.50,"25":120.50,"30":150.50}},fixed:{"1GB":{"3":4.90,"5":5.40,"7":5.90,"10":6.40,"15":6.90,"30":7.40},"3GB":{"3":9.40,"5":9.90,"7":10.40,"10":10.90,"15":11.40,"30":11.90},"5GB":{"3":10.90,"5":11.90,"7":12.90,"10":13.90,"15":14.90,"30":15.90},"10GB":{"3":21.90,"5":22.90,"7":23.90,"10":24.90,"15":25.90,"30":26.90},"20GB":{"3":35.90,"5":37.90,"7":39.90,"10":41.90,"15":43.90,"30":45.90},"30GB":{"3":60.90,"5":63.90,"7":66.90,"10":69.90,"15":72.90,"30":75.90},"50GB":{"3":82.90,"5":87.90,"7":92.90,"10":97.90,"15":102.90,"30":107.90}}},
-  kr:{unlimited:{"Unlimited":{"1":9.00,"2":9.25,"3":9.50,"4":9.55,"5":9.80,"6":12.55,"7":12.80,"8":27.05,"9":27.30,"10":27.55,"15":27.80,"20":34.80,"25":41.80,"30":48.80},"Unlimited Plus":{"1":18.80,"2":19.05,"3":19.30,"4":19.55,"5":19.80,"6":24.60,"7":25.65,"8":42.55,"9":42.80,"10":43.05,"15":46.80,"20":52.80,"25":72.80,"30":92.80},"Unlimited Premium":{"1":13.90,"7":68.90,"8":78.90,"10":99.90,"15":138.90,"30":268.90}},fixed:{"1GB":{"1":3.25,"2":3.35,"3":3.45,"4":4.55,"5":4.65,"6":4.75,"7":4.85},"3GB":{"5":8.50},"5GB":{"7":10.50},"10GB":{"7":15.50,"15":17.50,"30":20.50},"20GB":{"10":36.50,"15":37.50,"30":39.50},"50GB":{"15":53.50},"100GB":{"10":72.50,"30":86.50}}}
+const FALLBACK_RAW = {
+  china:{
+    unlimited:{"Unlimited":{"1":5.90,"2":6.90,"3":7.90,"4":10.90,"5":12.90,"6":14.90,"7":16.90,"8":18.90,"9":20.90,"10":22.90,"12":26.90,"15":32.90,"20":44.90,"25":58.90,"30":68.90},"Unlimited Plus":{"1":7.90,"2":8.90,"3":12.90,"4":17.90,"5":19.90,"6":24.90,"7":26.90,"8":29.90,"9":33.90,"10":36.90,"12":45.90,"15":55.90,"20":76.90,"25":106.90,"30":116.90}},
+    fixed:{"1GB":{"1":3.25,"2":3.35,"3":3.45,"4":4.55,"5":4.65,"6":4.75,"7":4.85},"3GB":{"5":8.50},"5GB":{"7":10.50},"10GB":{"1":23.60,"2":23.70,"3":23.80,"4":25.70,"5":25.80,"6":26.70,"7":26.80,"10":28.80,"15":30.80,"30":32.80},"20GB":{"3":43.80,"5":44.80,"7":45.80,"10":49.80,"15":52.80,"20":54.80,"25":54.80,"30":54.80},"30GB":{"3":72.80,"5":75.80,"7":78.80,"10":81.80,"15":84.80,"20":86.50,"25":87.00,"30":87.80},"50GB":{"3":100.80,"5":103.80,"7":109.80,"10":112.80,"15":116.80,"30":120.80}}
+  },
+  japan:{
+    unlimited:{"Unlimited":{"1":8.50,"2":10.50,"3":12.50,"4":14.50,"5":16.50,"6":18.50,"7":20.50,"8":22.50,"9":24.50,"10":26.50,"11":28.50,"12":30.50,"13":32.50,"14":34.50,"15":36.50,"16":38.50,"17":40.50,"18":42.50,"19":44.50,"20":46.50,"25":56.50,"30":66.50},"Unlimited Plus":{"1":12.50,"2":14.50,"3":18.50,"4":20.50,"5":22.50,"6":24.50,"7":28.50,"8":30.50,"9":34.50,"10":38.50,"11":43.50,"12":47.50,"13":51.50,"14":55.50,"15":59.50,"16":63.50,"17":67.50,"18":71.50,"19":75.50,"20":79.50,"25":99.50,"30":119.50},"Unlimited Max":{"1":18.50,"2":20.50,"3":22.50,"4":24.50,"5":26.50,"6":28.50,"7":32.50,"8":36.50,"9":40.50,"10":44.50,"11":48.50,"12":52.50,"13":56.50,"14":60.50,"15":65.50,"16":70.50,"17":75.50,"18":80.50,"19":85.50,"20":90.50,"25":120.50,"30":150.50}},
+    fixed:{"1GB":{"3":4.90,"5":5.40,"7":5.90,"10":6.40,"15":6.90,"30":7.40},"3GB":{"3":9.40,"5":9.90,"7":10.40,"10":10.90,"15":11.40,"30":11.90},"5GB":{"3":10.90,"5":11.90,"7":12.90,"10":13.90,"15":14.90,"30":15.90},"10GB":{"3":21.90,"5":22.90,"7":23.90,"10":24.90,"15":25.90,"30":26.90},"20GB":{"3":35.90,"5":37.90,"7":39.90,"10":41.90,"15":43.90,"30":45.90},"30GB":{"3":60.90,"5":63.90,"7":66.90,"10":69.90,"15":72.90,"30":75.90},"50GB":{"3":82.90,"5":87.90,"7":92.90,"10":97.90,"15":102.90,"30":107.90}}
+  },
+  "south-korea":{
+    unlimited:{"Unlimited":{"1":9.00,"2":9.25,"3":9.50,"4":9.55,"5":9.80,"6":12.55,"7":12.80,"8":27.05,"9":27.30,"10":27.55,"15":27.80,"20":34.80,"25":41.80,"30":48.80},"Unlimited Plus":{"1":18.80,"2":19.05,"3":19.30,"4":19.55,"5":19.80,"6":24.60,"7":25.65,"8":42.55,"9":42.80,"10":43.05,"15":46.80,"20":52.80,"25":72.80,"30":92.80},"Unlimited Premium":{"1":13.90,"7":68.90,"8":78.90,"10":99.90,"15":138.90,"30":268.90}},
+    fixed:{"1GB":{"1":3.25,"2":3.35,"3":3.45,"4":4.55,"5":4.65,"6":4.75,"7":4.85},"3GB":{"5":8.50},"5GB":{"7":10.50},"10GB":{"7":15.50,"15":17.50,"30":20.50},"20GB":{"10":36.50,"15":37.50,"30":39.50},"50GB":{"15":53.50},"100GB":{"10":72.50,"30":86.50}}
+  }
 };
 
-let currentMode='unlimited',currentCountry='cn',currentLang='en';
+function toEntryTree(raw){
+  const knownLabels={china:{label:'China',flag:'🇨🇳'},japan:{label:'Japan',flag:'🇯🇵'},"south-korea":{label:'South Korea',flag:'🇰🇷'}};
+  const countries={};
+  const order=[];
+  for(const country in raw){
+    countries[country]={label:(knownLabels[country]||{}).label||country,flag:(knownLabels[country]||{}).flag||'🌐',unlimited:{},fixed:{}};
+    order.push(country);
+    for(const mode of ['unlimited','fixed']){
+      const plans=raw[country][mode]||{};
+      for(const plan in plans){
+        countries[country][mode][plan]={};
+        for(const day in plans[plan]){
+          const p=plans[plan][day];
+          countries[country][mode][plan][day]={price:Math.round(p*0.95*20)/20, orig:p};
+        }
+      }
+    }
+  }
+  return {countries,order};
+}
+const FALLBACK_PRICING = toEntryTree(FALLBACK_RAW);
+
+const LIVE_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRiWGPq6H7GYGFyc9N19THewnzJQ7ehzoQ-NkgtPfHywh3CColZ_iU-C7Bl23hmqL8JRxdUmsUQqP5p/pub?gid=0&single=true&output=csv';
+
+function parseCSV(text){
+  const rows=[];
+  let row=[],field='',inQuotes=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(inQuotes){
+      if(c==='"'){ if(text[i+1]==='"'){field+='"';i++;} else inQuotes=false; }
+      else field+=c;
+    } else {
+      if(c==='"') inQuotes=true;
+      else if(c===','){row.push(field);field='';}
+      else if(c==='\n'){row.push(field);rows.push(row);row=[];field='';}
+      else if(c==='\r'){}
+      else field+=c;
+    }
+  }
+  if(field.length||row.length){row.push(field);rows.push(row);}
+  return rows;
+}
+
+function parseCountryLabel(raw){
+  const s=(raw||'').trim();
+  const m=s.match(/^(\p{Regional_Indicator}{2})\s*(.*)$/u);
+  if(m && m[2]) return {flag:m[1], name:m[2].trim()};
+  return {flag:'🌐', name:s};
+}
+
+function slugify(name){
+  return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+
+function parseMoney(s){
+  const n=parseFloat(String(s||'').replace(/[^0-9.\-]/g,''));
+  return isNaN(n)?null:n;
+}
+
+function findCol(headers,name){
+  return headers.findIndex(h=>(h||'').trim().toLowerCase()===name.toLowerCase());
+}
+
+async function fetchLivePricing(){
+  const res=await fetch(LIVE_CSV_URL,{cache:'no-store'});
+  if(!res.ok) throw new Error('CSV fetch failed: '+res.status);
+  const text=await res.text();
+  const rows=parseCSV(text);
+  const headers=rows[0]||[];
+  const colCountry=findCol(headers,'Country');
+  const colPlan=findCol(headers,'GB');
+  const colDay=findCol(headers,'Day');
+  const colPrice=findCol(headers,'Set Price');
+  const colOrig=findCol(headers,'After 5%');
+  if(colCountry<0||colPlan<0||colDay<0||colPrice<0||colOrig<0){
+    throw new Error('CSV missing expected columns (Country, GB, Day, Set Price, After 5%)');
+  }
+  const countries={};
+  const order=[];
+  for(let i=1;i<rows.length;i++){
+    const r=rows[i];
+    if(!r) continue;
+    const {flag,name}=parseCountryLabel(r[colCountry]);
+    const key=slugify(name);
+    if(!key) continue;
+    const planRaw=(r[colPlan]||'').trim();
+    const day=(r[colDay]||'').trim();
+    const price=parseMoney(r[colPrice]);
+    const orig=parseMoney(r[colOrig]);
+    if(!planRaw||!day||price===null||orig===null) continue;
+    if(!countries[key]){ countries[key]={label:name,flag,unlimited:{},fixed:{}}; order.push(key); }
+    if(/^unlimited/i.test(planRaw)){
+      if(!countries[key].unlimited[planRaw]) countries[key].unlimited[planRaw]={};
+      countries[key].unlimited[planRaw][day]={price,orig};
+    } else {
+      const gbKey=planRaw+'GB';
+      if(!countries[key].fixed[gbKey]) countries[key].fixed[gbKey]={};
+      countries[key].fixed[gbKey][day]={price,orig};
+    }
+  }
+  return {countries,order};
+}
+
+let currentMode='unlimited', currentCountry=null, currentLang='en', PRICING=null;
 
 function setLang(lang,btn){
   currentLang=lang;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  if(btn)btn.classList.add('active');
+  if(btn) btn.classList.add('active');
   applyLang();
 }
 
 function applyLang(){
-  const t=T[currentLang],g=id=>document.getElementById(id);
-  g('nav-cta').textContent=t.nav_buy;
-  g('hero-badge').textContent=t.hero_badge;
-  g('hero-h1').innerHTML=t.hero_title+'<br><span id="hero-title-span">'+t.hero_span+'</span>';
-  g('hero-sub').innerHTML=t.hero_sub;
-  g('hero-btn-find').textContent=t.hero_btn_find;
-  g('hero-btn-chat').textContent=t.hero_btn_chat;
-  g('hero-available').textContent=t.hero_available;
-  g('hero-more').textContent=t.hero_more;
+  const t=T[currentLang];
+  const s=id=>document.getElementById(id);
+  s('nav-cta').textContent=t.nav_buy;
+  s('hero-badge').textContent=t.hero_badge;
+  s('hero-h1').innerHTML=t.hero_title+'<br><span id="hero-title-span">'+t.hero_span+'</span>';
+  s('hero-sub').innerHTML=t.hero_sub;
+  s('hero-btn-find').textContent=t.hero_btn_find;
+  s('hero-btn-chat').textContent=t.hero_btn_chat;
+  s('hero-available').textContent=t.hero_available;
+  s('hero-more').textContent=t.hero_more;
   document.querySelectorAll('.trust-item').forEach(el=>{const k=el.getAttribute('data-key');if(k&&t[k])el.textContent=t[k];});
-  ['plans-tag','plans-title','plans-sub','lbl-country','lbl-plan','lbl-days','lbl-data','lbl-days2','tab-unlimited','tab-fixed','note-hotspot','note-delivery','note-vpn','unavail-msg','tt-label'].forEach(id=>{
-    const key=id.replace(/-([a-z])/g,(m,c)=>c.toUpperCase()).replace('lbl','lbl_').replace(/^lbl_/,'lbl_');
-    const map={'plans-tag':'plans_tag','plans-title':'plans_title','plans-sub':'plans_sub','lbl-country':'lbl_country','lbl-plan':'lbl_plan','lbl-days':'lbl_days','lbl-data':'lbl_data','lbl-days2':'lbl_days','tab-unlimited':'tab_unlimited','tab-fixed':'tab_fixed','note-hotspot':'note_hotspot','note-delivery':'note_delivery','note-vpn':'note_vpn','unavail-msg':'unavail_msg','tt-label':'tt_label'};
-    if(g(id)&&t[map[id]])g(id).textContent=t[map[id]];
-  });
-  g('wa-text').textContent=t.btn_order;
-  g('disc-badge').textContent=t.disc;
-  const cs=g('sel-country');cs.options[0].text=t.c_cn;cs.options[1].text=t.c_jp;cs.options[2].text=t.c_kr;
-  ['how-tag','how-title','how-sub','step1-title','step1-desc','step2-title','step2-desc','step3-title','step3-desc','why-tag','why-title','why-sub'].forEach(id=>{
-    const map={'how-tag':'how_tag','how-title':'how_title','how-sub':'how_sub','step1-title':'step1_title','step1-desc':'step1_desc','step2-title':'step2_title','step2-desc':'step2_desc','step3-title':'step3_title','step3-desc':'step3_desc','why-tag':'why_tag','why-title':'why_title','why-sub':'why_sub'};
-    if(g(id)&&t[map[id]])g(id).textContent=t[map[id]];
-  });
-  for(let i=1;i<=6;i++){g('why'+i+'-title').textContent=t['why'+i+'_title'];g('why'+i+'-desc').textContent=t['why'+i+'_desc'];}
-  for(let i=1;i<=4;i++)g('badge'+i).textContent=t['badge'+i];
-  g('rev-tag').textContent=t.rev_tag;g('rev-title').textContent=t.rev_title;g('rev-sub').textContent=t.rev_sub;
-  g('faq-tag').textContent=t.faq_tag;g('faq-title').textContent=t.faq_title;g('faq-sub').textContent=t.faq_sub;
-  for(let i=1;i<=7;i++){g('faq-q'+i).textContent=t['faq_q'+i];g('faq-a'+i).textContent=t['faq_a'+i];}
-  g('cta-title').textContent=t.cta_title;g('cta-sub').textContent=t.cta_sub;g('cta-btn').textContent=t.cta_btn;g('cta-trust').innerHTML=t.cta_trust;
-  g('footer-made').textContent=t.footer_made;
-  if(currentMode==='unlimited')onUplanChange();else onGbChange();
+  s('plans-tag').textContent=t.plans_tag;s('plans-title').textContent=t.plans_title;s('plans-sub').textContent=t.plans_sub;
+  s('lbl-country').textContent=t.lbl_country;s('lbl-plan').textContent=t.lbl_plan;s('lbl-days').textContent=t.lbl_days;s('lbl-data').textContent=t.lbl_data;s('lbl-days2').textContent=t.lbl_days;
+  s('tab-unlimited').textContent=t.tab_unlimited;s('tab-fixed').textContent=t.tab_fixed;
+  s('note-hotspot').textContent=t.note_hotspot;s('note-delivery').textContent=t.note_delivery;s('note-vpn').textContent=t.note_vpn;
+  s('unavail-msg').textContent=t.unavail_msg;s('tt-label').textContent=t.tt_label;s('disc-badge').textContent=t.disc;s('wa-text').textContent=t.btn_order;
+  s('how-tag').textContent=t.how_tag;s('how-title').textContent=t.how_title;s('how-sub').textContent=t.how_sub;
+  s('step1-title').textContent=t.step1_title;s('step1-desc').textContent=t.step1_desc;
+  s('step2-title').textContent=t.step2_title;s('step2-desc').textContent=t.step2_desc;
+  s('step3-title').textContent=t.step3_title;s('step3-desc').textContent=t.step3_desc;
+  s('why-tag').textContent=t.why_tag;s('why-title').textContent=t.why_title;s('why-sub').textContent=t.why_sub;
+  for(let i=1;i<=6;i++){s('why'+i+'-title').textContent=t['why'+i+'_title'];s('why'+i+'-desc').textContent=t['why'+i+'_desc'];}
+  for(let i=1;i<=4;i++) s('badge'+i).textContent=t['badge'+i];
+  s('rev-tag').textContent=t.rev_tag;s('rev-title').textContent=t.rev_title;s('rev-sub').textContent=t.rev_sub;
+  s('faq-tag').textContent=t.faq_tag;s('faq-title').textContent=t.faq_title;s('faq-sub').textContent=t.faq_sub;
+  for(let i=1;i<=7;i++){s('faq-q'+i).textContent=t['faq_q'+i];s('faq-a'+i).textContent=t['faq_a'+i];}
+  s('cta-title').textContent=t.cta_title;s('cta-sub').textContent=t.cta_sub;s('cta-btn').textContent=t.cta_btn;s('cta-trust').innerHTML=t.cta_trust;
+  s('footer-made').textContent=t.footer_made;
+  if(currentMode==='unlimited') onUplanChange(); else onGbChange();
   renderPrice();
 }
 
@@ -658,31 +762,79 @@ function switchMode(mode){
   document.getElementById('tab-fixed').classList.toggle('active',mode==='fixed');
   document.getElementById('mode-unlimited').style.display=mode==='unlimited'?'':'none';
   document.getElementById('mode-fixed').style.display=mode==='fixed'?'':'none';
-  if(mode==='unlimited')populateUplans();else populateGb();
+  if(mode==='unlimited') populateUplans(); else populateGb();
 }
 
-function onCountryChange(){currentCountry=document.getElementById('sel-country').value;if(currentMode==='unlimited')populateUplans();else populateGb();}
+function onCountryChange(){
+  currentCountry=document.getElementById('sel-country').value;
+  if(currentMode==='unlimited') populateUplans(); else populateGb();
+}
 
-function dayLabel(d){const t=T[currentLang],n=parseInt(d);return currentLang==='zh'?`${d}${t.days}`:`${d} ${n>1?t.days:t.day}`;}
+function dayLabel(d){
+  const t=T[currentLang],n=parseInt(d);
+  return currentLang==='zh'?`${d}${t.days}`:`${d} ${n>1?t.days:t.day}`;
+}
 
-function populateUplans(){const plans=Object.keys(PRICING[currentCountry].unlimited);document.getElementById('sel-uplan').innerHTML=plans.map(p=>`<option value="${p}">${p}</option>`).join('');onUplanChange();}
-function onUplanChange(){const plan=document.getElementById('sel-uplan').value;const days=Object.keys(PRICING[currentCountry].unlimited[plan]||{});document.getElementById('sel-udays').innerHTML=days.map(d=>`<option value="${d}">${dayLabel(d)}</option>`).join('');renderPrice();}
-function populateGb(){const gbKeys=Object.keys(PRICING[currentCountry].fixed);document.getElementById('sel-gb').innerHTML=gbKeys.map(g=>`<option value="${g}">${g}</option>`).join('');onGbChange();}
-function onGbChange(){const gb=document.getElementById('sel-gb').value;const days=Object.keys(PRICING[currentCountry].fixed[gb]||{});document.getElementById('sel-fdays').innerHTML=days.map(d=>`<option value="${d}">${dayLabel(d)}</option>`).join('');renderPrice();}
+function populateCountries(){
+  if(!PRICING) return;
+  const sel=document.getElementById('sel-country');
+  sel.innerHTML=PRICING.order.map(k=>`<option value="${k}">${PRICING.countries[k].flag} ${PRICING.countries[k].label}</option>`).join('');
+  if(!currentCountry || !PRICING.countries[currentCountry]) currentCountry=PRICING.order[0];
+  sel.value=currentCountry;
+}
+
+function populateUplans(){
+  if(!PRICING||!currentCountry) return;
+  const plans=Object.keys(PRICING.countries[currentCountry].unlimited);
+  document.getElementById('sel-uplan').innerHTML=plans.map(p=>`<option value="${p}">${p}</option>`).join('');
+  onUplanChange();
+}
+
+function onUplanChange(){
+  if(!PRICING||!currentCountry) return;
+  const plan=document.getElementById('sel-uplan').value;
+  const days=Object.keys(PRICING.countries[currentCountry].unlimited[plan]||{});
+  document.getElementById('sel-udays').innerHTML=days.map(d=>`<option value="${d}">${dayLabel(d)}</option>`).join('');
+  renderPrice();
+}
+
+function populateGb(){
+  if(!PRICING||!currentCountry) return;
+  const gbKeys=Object.keys(PRICING.countries[currentCountry].fixed);
+  document.getElementById('sel-gb').innerHTML=gbKeys.map(g=>`<option value="${g}">${g}</option>`).join('');
+  onGbChange();
+}
+
+function onGbChange(){
+  if(!PRICING||!currentCountry) return;
+  const gb=document.getElementById('sel-gb').value;
+  const days=Object.keys(PRICING.countries[currentCountry].fixed[gb]||{});
+  document.getElementById('sel-fdays').innerHTML=days.map(d=>`<option value="${d}">${dayLabel(d)}</option>`).join('');
+  renderPrice();
+}
 
 function renderPrice(){
+  if(!PRICING||!currentCountry) return;
   const t=T[currentLang];
-  let plan,days,price;
-  if(currentMode==='unlimited'){plan=document.getElementById('sel-uplan').value;days=document.getElementById('sel-udays').value;price=plan&&days?(PRICING[currentCountry].unlimited[plan]||{})[days]:null;}
-  else{plan=document.getElementById('sel-gb').value;days=document.getElementById('sel-fdays').value;price=plan&&days?(PRICING[currentCountry].fixed[plan]||{})[days]:null;}
-  const flag=currentCountry==='cn'?'🇨🇳':currentCountry==='jp'?'🇯🇵':'🇰🇷';
-  const cname=t[currentCountry];
+  const countryInfo=PRICING.countries[currentCountry];
+  let plan,days,entry;
+  if(currentMode==='unlimited'){
+    plan=document.getElementById('sel-uplan').value;
+    days=document.getElementById('sel-udays').value;
+    entry=plan&&days?(countryInfo.unlimited[plan]||{})[days]:null;
+  } else {
+    plan=document.getElementById('sel-gb').value;
+    days=document.getElementById('sel-fdays').value;
+    entry=plan&&days?(countryInfo.fixed[plan]||{})[days]:null;
+  }
+  const flag=countryInfo.flag;
+  const cname=countryInfo.label;
   const planLabel=plan&&days?`${flag} ${cname} · ${plan} · ${dayLabel(days)}`:t.price_select;
   const unavailBox=document.getElementById('unavail-box');
   const priceBox=document.getElementById('price-box');
   const waLink=document.getElementById('wa-link');
   const tooltipWrap=document.getElementById('tooltip-wrap');
-  if(!price){
+  if(!entry){
     unavailBox.style.display=plan&&days?'block':'none';
     priceBox.style.opacity='0.4';
     document.getElementById('price-amt').textContent='RM —';
@@ -693,39 +845,38 @@ function renderPrice(){
     tooltipWrap.style.display='none';
     waLink.classList.add('disabled');
     document.getElementById('wa-text').textContent=t.btn_order;
-    if(plan&&days)showSuggestions();
+    if(plan&&days) showSuggestions();
     return;
   }
   unavailBox.style.display='none';priceBox.style.opacity='1';waLink.classList.remove('disabled');
-  document.getElementById('plan-note-china').style.display=currentCountry==='cn'?'block':'none';
+  document.getElementById('plan-note-china').style.display=cname.includes('China')?'block':'none';
   const speedData=currentMode==='unlimited'&&SPEED_DESC[currentCountry]&&SPEED_DESC[currentCountry][plan];
   if(speedData){document.getElementById('tooltip-text').textContent=speedData[currentLang]+' '+t.speed_reset;tooltipWrap.style.display='block';}
   else tooltipWrap.style.display='none';
-  const discPrice=Math.round(price*0.95*20)/20;
-  document.getElementById('price-orig').textContent=`RM ${price.toFixed(2)}`;
-  document.getElementById('price-amt').textContent=`RM ${discPrice.toFixed(2)}`;
+  document.getElementById('price-orig').textContent=`RM ${entry.orig.toFixed(2)}`;
+  document.getElementById('price-amt').textContent=`RM ${entry.price.toFixed(2)}`;
   document.getElementById('disc-badge').style.display='block';
   document.getElementById('disc-badge').textContent=t.disc;
   document.getElementById('price-label').textContent=planLabel;
   document.getElementById('wa-text').textContent=t.btn_order;
-  const cnEn=currentCountry==='cn'?'China':currentCountry==='jp'?'Japan':'South Korea';
-  const msg=encodeURIComponent(`Hi Lunara! I would like to purchase an eSIM plan:\n\nCountry: ${cnEn}\nPlan: ${plan}\nDuration: ${days} Days\nPrice: RM ${discPrice.toFixed(2)} (5% off from RM ${price.toFixed(2)})\n\nPlease assist, thank you!`);
+  const msg=encodeURIComponent(`Hi Lunara! I would like to purchase an eSIM plan:\n\nCountry: ${cname}\nPlan: ${plan}\nDuration: ${days} Days\nPrice: RM ${entry.price.toFixed(2)} (5% off from RM ${entry.orig.toFixed(2)})\n\nPlease assist, thank you!`);
   waLink.href=`https://wa.me/60163138539?text=${msg}`;
 }
 
 function showSuggestions(){
-  const pool=currentMode==='unlimited'?PRICING[currentCountry].unlimited:PRICING[currentCountry].fixed;
+  if(!PRICING||!currentCountry) return;
+  const pool=currentMode==='unlimited'?PRICING.countries[currentCountry].unlimited:PRICING.countries[currentCountry].fixed;
   const btns=document.getElementById('suggest-btns');btns.innerHTML='';
   let count=0;
   for(const[planName,daysObj]of Object.entries(pool)){
-    for(const[d,price]of Object.entries(daysObj)){
-      if(count>=4)break;
+    for(const[d,entry]of Object.entries(daysObj)){
+      if(count>=4) break;
       const btn=document.createElement('button');btn.className='suggest-btn';
-      btn.textContent=`${planName} ${dayLabel(d)} — RM ${price.toFixed(2)}`;
+      btn.textContent=`${planName} ${dayLabel(d)} — RM ${entry.price.toFixed(2)}`;
       btn.onclick=()=>applySuggestion(currentMode,planName,d);
       btns.appendChild(btn);count++;
     }
-    if(count>=4)break;
+    if(count>=4) break;
   }
 }
 
@@ -737,14 +888,26 @@ function applySuggestion(mode,plan,days){
 function toggleFaq(el){
   const isOpen=el.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
-  if(!isOpen)el.classList.add('open');
+  if(!isOpen) el.classList.add('open');
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});
 });
 
-populateUplans();
+document.getElementById('price-label').textContent='Loading live prices…';
+document.getElementById('wa-link').classList.add('disabled');
+
+fetchLivePricing().then(data=>{
+  PRICING=data;
+  populateCountries();
+  if(currentMode==='unlimited') populateUplans(); else populateGb();
+}).catch(err=>{
+  console.error('Live pricing unavailable, falling back to last-saved prices.',err);
+  PRICING=FALLBACK_PRICING;
+  populateCountries();
+  if(currentMode==='unlimited') populateUplans(); else populateGb();
+});
 </script>
 </body>
 </html>
